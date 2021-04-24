@@ -3,19 +3,13 @@ using UnityEngine;
 public class PlayerAnimationController : MonoBehaviour
 {
     
-    const string STATE_IDLE = "Player_Idle_1";
-    const string STATE_RUN = "Player_Run";
+    const string STATE_IDLE = "player_idle";
+    const string STATE_WALK = "player_walk";
 
-    const string STATE_FALL = "Player_Fall";
-    const string STATE_JUMP = "Player_Jump";
+    const string STATE_JUMP = "player_jump";
 
-    const string STATE_DEATH = "Player_Die";
-    const string STATE_DASH = "Player_Dash";
-    const string STATE_WALLSLIDE = "Player_WallSlide";
-
-    const string STATE_ATTACK = "Attack";
-    const string STATE_ATTACK_UP = "Player_AttackUp";
-    const string STATE_ATTACK_DOWN = "Player_AttackDown";
+    //const string STATE_DEATH = "Player_Die";
+    const string STATE_ATTACK = "player_attack";
 
 
     [SerializeField] Transform player;
@@ -40,24 +34,9 @@ public class PlayerAnimationController : MonoBehaviour
     {
         speed.x = Mathf.Abs(playerMovement.Velocity.x);
         speed.y = playerMovement.Velocity.y;
-        animator.SetFloat("yInput", playerMovement.DirectionInput.y);
 
-        if(playerController.IsDead)
-        {
-            ChangeState(STATE_DEATH);
-        }
 
-        else if(playerMovement.IsDashing)
-        {
-            ChangeState(STATE_DASH);
-        }
-
-        else if(playerMovement.IsWallSliding)
-        {
-            ChangeState(STATE_WALLSLIDE);
-        }
-
-        else if(playerAttack.IsAttacking)
+        if(playerAttack.IsAttacking)
         {
             ChangeState(STATE_ATTACK);
         }
@@ -66,11 +45,6 @@ public class PlayerAnimationController : MonoBehaviour
         {
             ChangeState(STATE_JUMP);
         }   
-             
-        else if( !playerMovement.IsGrounded && speed.y < 0)
-        {
-            ChangeState(STATE_FALL);
-        }
 
         else if( playerMovement.IsGrounded && speed.x < 0.1)
         {
@@ -79,7 +53,7 @@ public class PlayerAnimationController : MonoBehaviour
 
         else if( playerMovement.IsGrounded && speed.x >= 0.1)
         {
-            ChangeState(STATE_RUN);
+            ChangeState(STATE_WALK);
         }
 
     }

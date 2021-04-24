@@ -22,8 +22,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] public Material WhiteMaterial;
     [SerializeField] public Material DefaultMaterial;
 
-
-    
     #region getters
 
     public static GameManager Instance { get { return instance; } }

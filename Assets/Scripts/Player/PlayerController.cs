@@ -67,13 +67,6 @@ public class PlayerController : MonoBehaviour
         playerMovement = this.GetComponent<PlayerMovement>();
         spriteRenderer = GFX.GetComponent<SpriteRenderer>();
 
-        health = maxHealth;
-        healthBar.SetMaxValue(maxHealth);
-        healthBar.SetValue(maxHealth);
-
-        mana = maxMana;
-        manaBar.SetMaxValue(maxMana);
-        manaBar.SetValue(maxMana);
 
         bufferTimer = new Timer(bufferTime);
     }
