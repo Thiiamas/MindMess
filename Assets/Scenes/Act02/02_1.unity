@@ -1649,7 +1649,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: b307ec1a07e488544986a2998cb1180d, type: 3}
 --- !u!4 &765913419 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 8974720010737130427, guid: b307ec1a07e488544986a2998cb1180d,
+  m_CorrespondingSourceObject: {fileID: 1194902565598434389, guid: b307ec1a07e488544986a2998cb1180d,
     type: 3}
   m_PrefabInstance: {fileID: 765913418}
   m_PrefabAsset: {fileID: 0}
@@ -1768,7 +1768,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &786533091
 MonoBehaviour:
@@ -1990,7 +1990,7 @@ MonoBehaviour:
   m_Priority: 5
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
-  m_Follow: {fileID: 765913419}
+  m_Follow: {fileID: 0}
   m_Lens:
     FieldOfView: 60
     OrthographicSize: 4.6074195
@@ -2036,7 +2036,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5763b9a00b367df47a1546984903178b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerTransform: {fileID: 765913419}
+  playerTransform: {fileID: 0}
   CamTriggerX: {fileID: 1108771273}
 --- !u!1 &1108771272
 GameObject:
@@ -2135,7 +2135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a6199cba65509240885d982ee5e2f70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerTransform: {fileID: 0}
+  playerTransform: {fileID: 765913419}
   fromEntry1: 10
   fromEntry2: 200
   fromEntry3: 7
@@ -3154,7 +3154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ad0552af6af29d4d9a7417d11592183, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerTransform: {fileID: 765913419}
+  playerTransform: {fileID: 0}
   CamTriggerX: {fileID: 1108771273}
 --- !u!1 &1888177043
 GameObject:

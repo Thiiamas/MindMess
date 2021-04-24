@@ -418,12 +418,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a6199cba65509240885d982ee5e2f70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  indestructable: {fileID: 573999017}
-  playerTransform: {fileID: 1108364570}
+  playerTransform: {fileID: 1879250218}
   fromEntry1: 6
   fromEntry2: 0
+  fromEntry3: 0
   Entry1: {fileID: 36215133}
   Entry2: {fileID: 0}
+  Entry3: {fileID: 0}
 --- !u!4 &512471803
 Transform:
   m_ObjectHideFlags: 0
@@ -591,12 +592,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1108364570 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8974720010737130427, guid: b307ec1a07e488544986a2998cb1180d,
-    type: 3}
-  m_PrefabInstance: {fileID: 1367266133}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1267961646
 GameObject:
   m_ObjectHideFlags: 0
@@ -743,8 +738,8 @@ MonoBehaviour:
   Image: {fileID: 0}
   Text: interactable Text
   loader: {fileID: 293357960}
+  dog: {fileID: 0}
   sceneIndex: 6
-  indestructable: {fileID: 573999017}
 --- !u!61 &1340442173
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -846,6 +841,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1194902564469416180, guid: b307ec1a07e488544986a2998cb1180d,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1194902564469416180, guid: b307ec1a07e488544986a2998cb1180d,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1194902565165134196, guid: b307ec1a07e488544986a2998cb1180d,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1194902565165134196, guid: b307ec1a07e488544986a2998cb1180d,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1194902565598434389, guid: b307ec1a07e488544986a2998cb1180d,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8974720009917570117, guid: b307ec1a07e488544986a2998cb1180d,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -1345,3 +1365,9 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!4 &1879250218 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1194902565598434389, guid: b307ec1a07e488544986a2998cb1180d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1367266133}
+  m_PrefabAsset: {fileID: 0}

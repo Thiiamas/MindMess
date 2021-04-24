@@ -14,6 +14,7 @@ public class Trappe : InteractableComponent
         {
             //si chien mort, c'est pr forcer la bonne tp
             Indestructable.instance.prevScene = 200;
+            loader.LoadNextLevel(sceneIndex);
         }
         else
         {
