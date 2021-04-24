@@ -2,32 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InteractableComponent : MonoBehaviour
+public abstract class InteractableComponent : MonoBehaviour
 {
     [SerializeField] GameObject interactionHelper;
     [SerializeField] int uiOffset = 2;
 
     private GameObject spawnedHelper;
-    public virtual void OnInteraction()
-    {
-
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public abstract void OnInteraction();
 
     public void DisplayHelper()
     {
-        spawnedHelper = Instantiate(interactionHelper, GetSpawnPosition(), Quaternion.identity, transform);
+        spawnedHelper = Instantiate(interactionHelper, GetUISpawnPosition(), Quaternion.identity, transform);
     }
 
     public virtual void HideUI()
@@ -36,7 +21,7 @@ public class InteractableComponent : MonoBehaviour
         spawnedHelper = null;
     }
 
-    protected Vector3 GetSpawnPosition()
+    protected Vector3 GetUISpawnPosition()
     {
         Vector3 spawnPosition = transform.position;
         spawnPosition.y += uiOffset;

@@ -17,7 +17,7 @@ public class DialogueComponent : InteractableComponent
 
     private void DisplayDialogue()
     {
-        spawnedDialogue = Instantiate(textMesh, GetSpawnPosition(), Quaternion.identity, transform);
+        spawnedDialogue = Instantiate(textMesh, GetUISpawnPosition(), Quaternion.identity, transform);
         string dialogueText = "";
         foreach(string dialogueLine in dialogueString)
         {
