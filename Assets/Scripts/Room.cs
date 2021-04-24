@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Room : MonoBehaviour
 {
-    [SerializeField] Transform playerTransform;
+    Transform playerTransform;
     [SerializeField] int fromEntry1;
     [SerializeField] int fromEntry2;
     [SerializeField] int fromEntry3;
@@ -15,9 +15,9 @@ public class Room : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log(Indestructable.instance.prevScene);
+        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
 
-        if (Entry1 != null && fromEntry1 != null)
+        if (Entry1 != null)
         {
             if (Indestructable.instance.prevScene == fromEntry1)
             {
@@ -26,7 +26,7 @@ public class Room : MonoBehaviour
         }
         
 
-        if (Entry2 != null && fromEntry2 != null)
+        if (Entry2 != null)
         {
             if (Indestructable.instance.prevScene == fromEntry2)
             {
@@ -34,7 +34,7 @@ public class Room : MonoBehaviour
             }
         }
 
-        if (Entry3 != null && fromEntry3 != null)
+        if (Entry3 != null)
         {
             if (Indestructable.instance.prevScene == fromEntry3)
             {

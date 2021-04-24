@@ -8,6 +8,8 @@ public class Indestructable : MonoBehaviour
 
     public int prevScene = 6;
 
+    //Intro
+    public bool femmeTrigger = false;
     void Awake()
     {
         // If we don't have an instance set - set it now

@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Dog : MonoBehaviour
+public class Femme : InteractableComponent
 {
-    public Trappe trappe;
-    public int indexAfterDeath;
-    public bool isDead = false;
+
+    public override void OnInteraction()
+    {
+        Debug.Log("OU EST LE 20");
+        Indestructable.instance.femmeTrigger = true;
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -17,11 +20,5 @@ public class Dog : MonoBehaviour
     void Update()
     {
         
-    }
-
-    void Die()
-    {
-        isDead = true;
-        trappe.sceneIndex = indexAfterDeath;
     }
 }
