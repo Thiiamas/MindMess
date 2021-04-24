@@ -30,9 +30,9 @@
                     "interactions": ""
                 },
                 {
-                    "name": "Dash",
+                    "name": "Action",
                     "type": "Button",
-                    "id": "7a7ec300-127d-4899-b08b-1156ec93be91",
+                    "id": "235754b3-786b-482c-91c0-b5b2fa9e9815",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -195,23 +195,12 @@
                 },
                 {
                     "name": "",
-                    "id": "e2341b0c-2164-4964-8597-ac796f2eae29",
-                    "path": "<Gamepad>/rightTrigger",
-                    "interactions": "Press",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Dash",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "8b559674-edad-40ed-832b-b2472f7fe989",
-                    "path": "<Gamepad>/buttonNorth",
+                    "id": "b60b22e4-dfe7-4324-9424-047dc45c25f2",
+                    "path": "<Keyboard>/q",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Dash",
+                    "action": "Action",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

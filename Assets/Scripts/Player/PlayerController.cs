@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
@@ -73,6 +74,15 @@ public class PlayerController : MonoBehaviour
 
         bufferTimer = new Timer(bufferTime);
     }
+
+    #region Inputs
+
+    public void ActionInput(InputAction.CallbackContext context)
+    {
+        directionInput = context.ReadValue<Vector2>();
+    }
+
+    #endregion Inputs
 
 
     #region damage
