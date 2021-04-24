@@ -454,12 +454,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!4 &542379222 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8974720010737130427, guid: b307ec1a07e488544986a2998cb1180d,
-    type: 3}
-  m_PrefabInstance: {fileID: 1874220143}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &569000834
 GameObject:
   m_ObjectHideFlags: 0
@@ -1018,11 +1012,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a6199cba65509240885d982ee5e2f70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerTransform: {fileID: 542379222}
+  playerTransform: {fileID: 1874220144}
   fromEntry1: 6
   fromEntry2: 0
+  fromEntry3: 0
   Entry1: {fileID: 1097892762}
   Entry2: {fileID: 0}
+  Entry3: {fileID: 0}
 --- !u!4 &1074774800
 Transform:
   m_ObjectHideFlags: 0
@@ -1701,7 +1697,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1434333543
 GameObject:
@@ -2136,6 +2132,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b307ec1a07e488544986a2998cb1180d, type: 3}
+--- !u!4 &1874220144 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1194902565598434389, guid: b307ec1a07e488544986a2998cb1180d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1874220143}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1891009421
 GameObject:
   m_ObjectHideFlags: 0
@@ -2469,6 +2471,7 @@ MonoBehaviour:
   Image: {fileID: 0}
   Text: interactable Text
   loader: {fileID: 1717329892}
+  dog: {fileID: 0}
   sceneIndex: 6
 --- !u!61 &1942813408
 BoxCollider2D:
