@@ -153,7 +153,7 @@ public class PlayerMovement : MonoBehaviour
 
         // show foosteps
         if(velocity.x != 0 && isGrounded) {
-            footstepsEmission.rateOverTime = 35f;
+            footstepsEmission.rateOverTime = 15f;
         } else {
             footstepsEmission.rateOverTime = 0f;
         }

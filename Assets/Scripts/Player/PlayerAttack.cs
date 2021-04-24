@@ -56,7 +56,6 @@ public class PlayerAttack: MonoBehaviour
     void Attack()
 	{
         isAttacking = true;
-        InstantiateAttack(playerMovement.DirectionInput.y, basicAttackPrefab);
     }
 
     public void HasAttackEnnemy(Enemy enemy)
@@ -71,24 +70,6 @@ public class PlayerAttack: MonoBehaviour
     }
 
 
-    void InstantiateAttack(float yInput, GameObject attackPrefab)
-    {
-        GameObject light = Instantiate(attackPrefab, attackPoint);
-        float rotationValue = playerMovement.IsFacingRight ? 90f : -90f;
-
-        // Up
-        if (yInput > 0)
-        {
-            light.transform.RotateAround(this.transform.position, Vector3.forward, rotationValue);    
-        }
-
-        // Down
-        else if (yInput < 0)
-        {
-            light.transform.RotateAround(this.transform.position, Vector3.forward, -rotationValue);
-        }
-   
-    }
 
 
     List<Collider2D> GetCollidersInCollider(Collider2D collider, LayerMask layer)
