@@ -56,11 +56,8 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Enemies\Knight\BlueKnight.cs" />
     <Compile Include="Assets\Scripts\Player\Player Attacks\BasicAttackController.cs" />
-    <Compile Include="Assets\Scripts\Animations\Enemies\Knights\AerialBlueKnight.cs" />
     <Compile Include="Assets\Scripts\Camera\VirtualCameraManager.cs" />
-    <Compile Include="Assets\Scripts\Enemies\Knight\FireSun.cs" />
     <Compile Include="Assets\Scripts\TimeManager.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Enemies\Goblin\GoblinAnimationController.cs" />
@@ -68,45 +65,22 @@
     <Compile Include="Assets\Controls\InputManager.cs" />
     <Compile Include="Assets\Scripts\WaveSpawner.cs" />
     <Compile Include="Assets\Scripts\Projectiles\BombController.cs" />
-    <Compile Include="Assets\BlueKnightRoom.cs" />
-    <Compile Include="Assets\Scripts\Animations\Enemies\Knights\Swing2Boss.cs" />
     <Compile Include="Assets\Scripts\Enemies\Flying eye\FlyingEye.cs" />
-    <Compile Include="Assets\Scripts\Animations\EnemyRun.cs" />
-    <Compile Include="Assets\Scripts\Enemies\Roumsor\Roumsor.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
-    <Compile Include="Assets\Scripts\Animations\Enemies\Knights\Run.cs" />
     <Compile Include="Assets\Scripts\Utils\GameAssets.cs" />
-    <Compile Include="Assets\Scripts\Enemies\Knight\SunRayBoss.cs" />
     <Compile Include="Assets\Scripts\Enemies\Flying eye\FlyingEyeAnimationController.cs" />
-    <Compile Include="Assets\Scripts\Enemies\Knight\BossRoomLight.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerAttack.cs" />
     <Compile Include="Assets\Scripts\Timer.cs" />
     <Compile Include="Assets\Scripts\Enemies\Enemy.cs" />
-    <Compile Include="Assets\Scripts\Animations\Enemies\Knights\hurtBoss.cs" />
-    <Compile Include="Assets\Scripts\Enemies\Roums\Roums.cs" />
-    <Compile Include="Assets\Scripts\Animations\Enemies\Knights\SunPhase.cs" />
     <Compile Include="Assets\Scripts\Projectiles\EnemyProjectiles.cs" />
     <Compile Include="Assets\Scripts\Enemies\Goblin\GoblinController.cs" />
-    <Compile Include="Assets\Scripts\Enemies\Knight\LightRayAttack.cs" />
-    <Compile Include="Assets\Scripts\Animations\Enemies\Knights\DashBoss.cs" />
-    <Compile Include="Assets\Scripts\Animations\Enemies\Knights\MakedecisionBlueKnight.cs" />
-    <Compile Include="Assets\Scripts\Enemies\Roumsor\RoumsorAnimationController.cs" />
-    <Compile Include="Assets\Scripts\Animations\Enemies\Knights\IdleBlueKnight.cs" />
-    <Compile Include="Assets\Scripts\Animations\Enemies\Knights\Flurry.cs" />
-    <Compile Include="Assets\Scripts\Animations\Enemies\Knights\JumpBlueKnight.cs" />
     <Compile Include="Assets\Scripts\UI\DamagePopup.cs" />
     <Compile Include="Assets\Scripts\UI\BarController.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\Projectiles\RedBall.cs" />
     <Compile Include="Assets\Scripts\CharacterController2D.cs" />
-    <Compile Include="Assets\Scripts\Enemies\Knight\BlueKnightGFX.cs" />
     <Compile Include="Assets\Scripts\Utils\Rand.cs" />
-    <Compile Include="Assets\Scripts\Enemies\Knight\BlueKnightAI.cs" />
     <Compile Include="Assets\Scripts\InputBuffer.cs" />
-    <Compile Include="Assets\Scripts\Animations\EnemyIdle.cs" />
-    <Compile Include="Assets\Scripts\Enemies\Knight\EnemyAttack.cs" />
-    <Compile Include="Assets\Scripts\Enemies\Knight\DiveAttack.cs" />
-    <Compile Include="Assets\Scripts\Animations\Enemies\Knights\Tired.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Packages\TextMesh Pro\Shaders\TMPro.cginc" />
