@@ -6,8 +6,6 @@ public class InteractableComponent : MonoBehaviour
 {
     public string name;
 
-    public Sprite Image;
-
     public string Text = "interactable Text";
 
     public virtual void OnInteraction()
