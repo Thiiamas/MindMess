@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class InteractableComponent : MonoBehaviour
 {
-    public string name;
-
+    [SerializeField] GameObject interactionHelper;
+    [SerializeField] int helperOffset = 2;
     public string Text = "interactable Text";
 
+    private GameObject spawnedHelper;
     public virtual void OnInteraction()
     {
 
     }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,5 +24,17 @@ public class InteractableComponent : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void DisplayHelper()
+    {
+        Vector3 spawnPosition = transform.position;
+        spawnPosition.y += helperOffset; 
+        spawnedHelper = Instantiate(interactionHelper, spawnPosition, Quaternion.identity, transform);
+    }
+
+    public void HideHelper()
+    {
+        Destroy(spawnedHelper);
     }
 }

@@ -234,6 +234,7 @@ public class PlayerController : MonoBehaviour
         if (col.gameObject.tag == "Interactable")
         {
             currentInteractionObject = col.gameObject;
+            currentInteractionObject.GetComponent<InteractableComponent>().DisplayHelper();
         }
         if(col.gameObject.tag == "Enemy" )
         {
@@ -246,6 +247,10 @@ public class PlayerController : MonoBehaviour
     {
         if (col.gameObject.tag == "Interactable")
         {
+            if(currentInteractionObject != null)
+            {
+                currentInteractionObject.GetComponent<InteractableComponent>().HideHelper();
+            }
             currentInteractionObject = null;
         }
     }
