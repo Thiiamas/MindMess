@@ -7,11 +7,6 @@ public class Desk : InteractableComponent
     bool isOpen = false;
     public override void OnInteraction()
     {
-        Text = "Press A to";
-
-        isOpen = !isOpen;
-
-        Text += isOpen ? "to close" : "to open";
         Debug.Log("This is a desk wow");
     }
 

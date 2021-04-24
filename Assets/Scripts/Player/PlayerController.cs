@@ -249,7 +249,7 @@ public class PlayerController : MonoBehaviour
         {
             if(currentInteractionObject != null)
             {
-                currentInteractionObject.GetComponent<InteractableComponent>().HideHelper();
+                currentInteractionObject.GetComponent<InteractableComponent>().HideUI();
             }
             currentInteractionObject = null;
         }

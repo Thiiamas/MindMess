@@ -5,8 +5,7 @@ using UnityEngine;
 public class InteractableComponent : MonoBehaviour
 {
     [SerializeField] GameObject interactionHelper;
-    [SerializeField] int helperOffset = 2;
-    public string Text = "interactable Text";
+    [SerializeField] int uiOffset = 2;
 
     private GameObject spawnedHelper;
     public virtual void OnInteraction()
@@ -28,13 +27,19 @@ public class InteractableComponent : MonoBehaviour
 
     public void DisplayHelper()
     {
-        Vector3 spawnPosition = transform.position;
-        spawnPosition.y += helperOffset; 
-        spawnedHelper = Instantiate(interactionHelper, spawnPosition, Quaternion.identity, transform);
+        spawnedHelper = Instantiate(interactionHelper, GetSpawnPosition(), Quaternion.identity, transform);
     }
 
-    public void HideHelper()
+    public virtual void HideUI()
     {
         Destroy(spawnedHelper);
+        spawnedHelper = null;
+    }
+
+    protected Vector3 GetSpawnPosition()
+    {
+        Vector3 spawnPosition = transform.position;
+        spawnPosition.y += uiOffset;
+        return spawnPosition;
     }
 }
