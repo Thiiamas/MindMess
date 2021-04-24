@@ -37,6 +37,7 @@ public class VirtualCameraManager : MonoBehaviour
     void Update()
     {
 
+
         if( shakeTimer > 0 )
         {
             shakeTimer -= Time.deltaTime;

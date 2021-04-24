@@ -99,7 +99,11 @@ public class PlayerMovement : MonoBehaviour
         coyoteTimer = new Timer(coyoteTime);
     }
 
-	void Update()
+    private void Awake()
+    {
+        
+    }
+    void Update()
 	{
         isGrounded = characterController.isGrounded;
 
