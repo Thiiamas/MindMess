@@ -18,6 +18,7 @@ public class PlayerAttack: MonoBehaviour
 
     [Header("Game Object")]
     [SerializeField] GameObject basicAttackPrefab;
+    [SerializeField] GameObject hammerAttackPrefab;
     [SerializeField] Transform attackPoint;
 
 
@@ -44,19 +45,19 @@ public class PlayerAttack: MonoBehaviour
     }
 
 
-    public void AttackInput(InputAction.CallbackContext context)
+/*    public void AttackInput(InputAction.CallbackContext context)
     {
         if(context.performed)
         {
             StartCoroutine( playerController.InputBuffer(() => playerController.CanAttack(), Attack) );
         }
-    }
+    }*/
 
 
-    void Attack()
+    void AttackHammer()
 	{
         isAttacking = true;
-        InstantiateAttack(playerMovement.DirectionInput.y, basicAttackPrefab);
+        InstantiateAttack(playerMovement.DirectionInput.y, hammerAttackPrefab);
     }
 
     public void HasAttackEnnemy(Enemy enemy)
@@ -70,6 +71,11 @@ public class PlayerAttack: MonoBehaviour
         }
     }
 
+    void InstanciateHammerAttack(float yInput, GameObject attackPrefab)
+    {
+        GameObject hammerLight = Instantiate(attackPrefab, attackPoint);
+        float rotationValue = playerMovement.IsFacingRight ? 90f : -90f;
+    }
 
     void InstantiateAttack(float yInput, GameObject attackPrefab)
     {

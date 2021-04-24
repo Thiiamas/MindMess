@@ -50,6 +50,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float bufferTime = .2f;
     Timer bufferTimer;
 
+    [Header("Buffer")]
+    public GameObject currentInteractionObject;
+
     #region getters
 
     public bool IsDead { get { return isDead; } }
@@ -84,15 +87,23 @@ public class PlayerController : MonoBehaviour
 
     public void ActionInput(InputAction.CallbackContext context)
     {
-        // check si y'a un objets avec lequel interargir a porté
-
+        interactWithObject();
     }
 
     #endregion Inputs
 
-    void action(GameObject pObject)
+    void interactWithObject()
     {
-        //interact with the object
+        if (currentInteractionObject == null)
+        {
+            Debug.Log("Nothing to interact with");
+            return;
+        }
+        else
+        {
+            InteractableComponent interactableComponent = currentInteractionObject.GetComponent<InteractableComponent>();
+            interactableComponent.OnInteraction();
+        }
     }
 
     #region damage
@@ -227,11 +238,23 @@ public class PlayerController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
+        if (col.gameObject.tag == "Interactable")
+        {
+            currentInteractionObject = col.gameObject;
+        }
         if(col.gameObject.tag == "Enemy" )
         {
             Enemy enemy = col.gameObject.GetComponent<Enemy>();
             TakeDamage(col.transform, enemy.Damage);
         } 
+    }
+
+    private void OnTriggerExit2D(Collider2D col)
+    {
+        if (col.gameObject.tag == "Interactable")
+        {
+            currentInteractionObject = null;
+        }
     }
 
 }
