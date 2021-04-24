@@ -5,9 +5,10 @@ using UnityEngine;
 public class Door : InteractableComponent
 {
     [SerializeField] LevelLoader loader;
+    [SerializeField] int sceneIndex;
     public override void OnInteraction()
     {
-        loader.LoadNextLevel(1);
+        loader.LoadNextLevel(sceneIndex);
     }
 
     // Update is called once per frame
