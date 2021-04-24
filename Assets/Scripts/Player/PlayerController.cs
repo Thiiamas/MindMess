@@ -75,15 +75,25 @@ public class PlayerController : MonoBehaviour
         bufferTimer = new Timer(bufferTime);
     }
 
+    private void Update()
+    {
+        
+    }
+
     #region Inputs
 
     public void ActionInput(InputAction.CallbackContext context)
     {
-        directionInput = context.ReadValue<Vector2>();
+        // check si y'a un objets avec lequel interargir a porté
+
     }
 
     #endregion Inputs
 
+    void action(GameObject pObject)
+    {
+        //interact with the object
+    }
 
     #region damage
 
