@@ -80,7 +80,10 @@ public class PlayerController : MonoBehaviour
 
     public void ActionInput(InputAction.CallbackContext context)
     {
-        interactWithObject();
+        if(context.phase == InputActionPhase.Performed)
+        {
+            interactWithObject();
+        }
     }
 
     #endregion Inputs
