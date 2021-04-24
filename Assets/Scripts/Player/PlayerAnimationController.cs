@@ -35,20 +35,6 @@ public class PlayerAnimationController : MonoBehaviour
         speed.x = Mathf.Abs(playerMovement.Velocity.x);
         speed.y = playerMovement.Velocity.y;
 
-        /*if(playerController.IsDead)
-        {
-            ChangeState(STATE_DEATH);
-        }
-
-        else if(playerMovement.IsDashing)
-        {
-            ChangeState(STATE_DASH);
-        }
-
-        else if(playerMovement.IsWallSliding)
-        {
-            ChangeState(STATE_WALLSLIDE);
-        } */
 
         if(playerAttack.IsAttacking)
         {

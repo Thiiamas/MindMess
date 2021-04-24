@@ -16,10 +16,9 @@ public class PlayerAttack: MonoBehaviour
     [SerializeField] LayerMask enemyLayer;
 
 
-    [Header("Game Object")]
-    [SerializeField] GameObject basicAttackPrefab;
-    [SerializeField] GameObject hammerAttackPrefab;
-    [SerializeField] Transform attackPoint;
+    [Header("Attack")]
+    [SerializeField] Collider2D attackCollider;
+    [SerializeField] float attackDamage;
 
 
 
@@ -45,55 +44,24 @@ public class PlayerAttack: MonoBehaviour
     }
 
 
-/*    public void AttackInput(InputAction.CallbackContext context)
+    public void AttackInput(InputAction.CallbackContext context)
     {
         if(context.performed)
         {
-            StartCoroutine( playerController.InputBuffer(() => playerController.CanAttack(), Attack) );
+            StartCoroutine( playerController.InputBuffer(() => playerController.CanAttack(), AttackHammer) );
         }
-    }*/
+    }
 
 
     void AttackHammer()
 	{
         isAttacking = true;
-        InstantiateAttack(playerMovement.DirectionInput.y, hammerAttackPrefab);
-    }
+        List<Collider2D> hitten = GetCollidersInCollider(attackCollider, enemyLayer);
 
-    public void HasAttackEnnemy(Enemy enemy)
-    {   
-        playerController.CanJumpAfterAttack = true;
-   		VirtualCameraManager.Instance.ShakeCamera(3, 0.7f);
-        if (!playerMovement.IsGrounded && playerMovement.DirectionInput.y < 0)
+        foreach (Collider2D hit in hitten)
         {
-            Vector3 pDirection = (transform.position - enemy.transform.position).normalized;
-            StartCoroutine(playerMovement.KnockBack(pDirection, new Vector2(0, 10)));
+            /* do something */
         }
-    }
-
-    void InstanciateHammerAttack(float yInput, GameObject attackPrefab)
-    {
-        GameObject hammerLight = Instantiate(attackPrefab, attackPoint);
-        float rotationValue = playerMovement.IsFacingRight ? 90f : -90f;
-    }
-
-    void InstantiateAttack(float yInput, GameObject attackPrefab)
-    {
-        GameObject light = Instantiate(attackPrefab, attackPoint);
-        float rotationValue = playerMovement.IsFacingRight ? 90f : -90f;
-
-        // Up
-        if (yInput > 0)
-        {
-            light.transform.RotateAround(this.transform.position, Vector3.forward, rotationValue);    
-        }
-
-        // Down
-        else if (yInput < 0)
-        {
-            light.transform.RotateAround(this.transform.position, Vector3.forward, -rotationValue);
-        }
-   
     }
 
 
