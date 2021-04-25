@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 8770284384207089243}
   - component: {fileID: 8770284384207089220}
   - component: {fileID: 6735272768328323672}
-  - component: {fileID: -2532672570716304901}
   m_Layer: 10
   m_Name: Child
   m_TagString: Interactable
@@ -121,18 +120,3 @@ CapsuleCollider2D:
   m_Offset: {x: -0.013638258, y: -0.0045463247}
   m_Size: {x: 0.4696115, y: 0.86967564}
   m_Direction: 0
---- !u!114 &-2532672570716304901
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8770284384207089222}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 257ea25177502894a91acf7c37294214, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactionHelper: {fileID: 3497861898922562574, guid: 844a254fe643b1642b2396d832509422,
-    type: 3}
-  uiOffset: 2

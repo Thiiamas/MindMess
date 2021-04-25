@@ -3,6 +3,12 @@ using System.Collections;
 
 public class Indestructable : MonoBehaviour
 {
+    [Header("Particle Effect")]
+    [SerializeField] public GameObject HurtEffectPrefab;
+
+    [Header("Materials")]
+    [SerializeField] public Material WhiteMaterial;
+    [SerializeField] public Material DefaultMaterial;
 
     public static Indestructable instance = null;
 

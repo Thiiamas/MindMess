@@ -13,6 +13,10 @@ public class DialogueComponent : InteractableComponent
     {
         HideUI();
         DisplayDialogue();
+        Wife wife = GetComponent<Wife>();
+        if(wife != null){
+            wife.SetFemmeTrigger();
+        }
     }
 
     private void DisplayDialogue()

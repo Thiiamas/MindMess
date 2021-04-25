@@ -130,7 +130,7 @@ public class PlayerController : MonoBehaviour
         healthBar.SetValue(health / maxHealth);
 
         // hurt prefab
-        Instantiate(GameManager.Instance.HurtEffectPrefab, transform.position, Quaternion.identity);
+        Instantiate(Indestructable.instance.HurtEffectPrefab, transform.position, Quaternion.identity);
 
         // knockback
         Vector3 direction = (transform.position - damageDealer.position).normalized;
@@ -141,7 +141,7 @@ public class PlayerController : MonoBehaviour
 
     public IEnumerator DamageCoroutine()
     {
-        spriteRenderer.material = GameManager.Instance.WhiteMaterial;
+        spriteRenderer.material = Indestructable.instance.WhiteMaterial;
         if(health <= 0)
         {
             TimeManager.SlowMotion(slowMotionFactor);
@@ -150,7 +150,7 @@ public class PlayerController : MonoBehaviour
             TimeManager.RestoreTime();
         }
 
-        spriteRenderer.material = GameManager.Instance.DefaultMaterial;
+        spriteRenderer.material = Indestructable.instance.DefaultMaterial;
 
         // shake camera
         if (VirtualCameraManager.Instance)
