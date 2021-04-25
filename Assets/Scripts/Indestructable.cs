@@ -16,6 +16,8 @@ public class Indestructable : MonoBehaviour
 
     public int restartScene = 0;
 
+    public bool hasHammer = false;
+
     //Intro
     public bool femmeTrigger = false;
 

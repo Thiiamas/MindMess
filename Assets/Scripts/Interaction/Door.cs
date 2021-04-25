@@ -24,6 +24,10 @@ public class Door : InteractableComponent
         {
             animator.SetBool("isOpen", true);
             isOpen = true;
+            AudioSource audio = GetComponent<AudioSource>();
+            if(audio != null){
+                audio.Play();
+            }
         }
     }
 

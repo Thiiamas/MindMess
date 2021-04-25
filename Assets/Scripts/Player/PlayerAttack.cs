@@ -47,7 +47,7 @@ public class PlayerAttack: MonoBehaviour
 
     public void AttackInput(InputAction.CallbackContext context)
     {
-        if(context.performed)
+        if(Indestructable.instance.hasHammer && context.performed)
         {
             StartCoroutine(playerController.InputBuffer(() => playerController.CanAttack(), AttackHammer));
         }
@@ -56,6 +56,13 @@ public class PlayerAttack: MonoBehaviour
 
     void AttackHammer()
 	{
+        Transform attackPoint = transform.Find("AttackPoint");
+        if(attackPoint != null)
+        {
+            AudioSource audio = attackPoint.GetComponent<AudioSource>();
+            if (audio != null)
+                audio.Play();
+        }
         isAttacking = true;
         Collider2D[] hitColliders = Physics2D.OverlapCircleAll(attackPoint.position, attackRadius);
         for (int i = 0; i < hitColliders.Length; i++)
