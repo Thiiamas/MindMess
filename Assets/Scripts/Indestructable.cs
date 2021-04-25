@@ -12,6 +12,9 @@ public class Indestructable : MonoBehaviour
 
     //Intro
     public bool femmeTrigger = false;
+
+    //Act 02
+    public bool dogDead = false;
     void Awake()
     {
         // If we don't have an instance set - set it now
@@ -23,7 +26,6 @@ public class Indestructable : MonoBehaviour
             Destroy(this.gameObject);
             return;
         }
-        Debug.Log("ici");
         DontDestroyOnLoad(this.gameObject);
     }
 }

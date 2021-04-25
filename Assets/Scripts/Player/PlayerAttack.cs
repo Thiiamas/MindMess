@@ -8,7 +8,7 @@ public class PlayerAttack: MonoBehaviour
     CharacterController2D characterController;
     PlayerController playerController;
     PlayerMovement playerMovement;
-    bool isAttacking = false;
+    public bool isAttacking = false;
 
 
     [Header("Stats")]
@@ -48,7 +48,7 @@ public class PlayerAttack: MonoBehaviour
     {
         if(context.performed)
         {
-            StartCoroutine( playerController.InputBuffer(() => playerController.CanAttack(), AttackHammer) );
+            StartCoroutine(playerController.InputBuffer(() => playerController.CanAttack(), AttackHammer));
         }
     }
 
