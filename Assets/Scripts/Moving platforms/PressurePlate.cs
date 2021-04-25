@@ -8,7 +8,7 @@ public class PressurePlate : MonoBehaviour
 
     bool isPressed = false;
 
-    List<Collider2D> entitiesInCollision = new List<Collider2D>();
+    protected List<Collider2D> entitiesInCollision = new List<Collider2D>();
 
     public bool HasDollInCollision(){
         foreach (Collider2D entity in entitiesInCollision)
