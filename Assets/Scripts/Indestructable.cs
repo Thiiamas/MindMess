@@ -8,8 +8,6 @@ public class Indestructable : MonoBehaviour
 
     public int prevScene = 6;
 
-    public bool hasItem;
-
     //Intro
     public bool femmeTrigger = false;
 
