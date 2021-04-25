@@ -10,6 +10,8 @@ TagManager:
   - WaveSpawner
   - Interactable
   - Toupie
+  - PlatFantome
+  - MovingPlatform
   layers:
   - Default
   - TransparentFX
@@ -22,8 +24,8 @@ TagManager:
   - Projectiles
   - Text
   - Interactable
-  - 
-  - 
+  - PlatFantome
+  - PressurePlate
   - 
   - 
   - 

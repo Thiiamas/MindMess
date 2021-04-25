@@ -230,13 +230,20 @@ public class PlayerController : MonoBehaviour
         return !playerMovement.IsDashing && playerMovement.DashHasReset && playerMovement.DashHasCooldown;
     }
 
-    
+    public RaycastHit2D CheckFantome(LayerMask layerMask)
+    {
+        RaycastHit2D hit;
+        Vector2 below = new Vector2(0, -1);
+        hit = Physics2D.Raycast(transform.position, below, 0.9f, layerMask);
+        return hit;
+    }
+
     /*void OnCollisionEnter2D(Collision2D col)
     {
-        if(col.gameObject.tag == "Enemy")
+        
+        if (col.gameObject.tag == "Ground")
         {
-            Enemy enemy = col.gameObject.GetComponent<Enemy>();
-            TakeDamage(col.transform, enemy.Damage);
+            Debug.Log("gound");
         }
     }*/
 
@@ -245,6 +252,10 @@ public class PlayerController : MonoBehaviour
     {
         if (col.gameObject.tag == "Interactable")
         {
+            if (currentInteractionObject != null)
+            {
+                currentInteractionObject.GetComponent<InteractableComponent>().HideUI();
+            }
             currentInteractionObject = col.gameObject;
             currentInteractionObject.GetComponent<InteractableComponent>().DisplayHelper();
         }
