@@ -43,3 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a03e2a01e8fcb442af9523535b497ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DollPrefab: {fileID: 4064911978495940224, guid: 8d4f0000f9e3b5242969ebb82453b0c3,
+    type: 3}
+  IronDollPrefab: {fileID: 4832184909408827382, guid: a36f3409f3ff935479bf8498691e3006,
+    type: 3}

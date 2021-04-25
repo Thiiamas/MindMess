@@ -78,24 +78,35 @@ public class PlayerController : MonoBehaviour
     {
         if(context.phase == InputActionPhase.Performed)
         {
-            interactWithObject();
+            if(!interactWithObject())
+            {
+                MovingplatformsManager platformManager = MovingplatformsManager.Instance;
+                if (platformManager != null)
+                {
+                    platformManager.DropItem();
+                }
+            }
         }
     }
 
     #endregion Inputs
 
-    void interactWithObject()
+    bool interactWithObject()
     {
         if (currentInteractionObject == null)
         {
             Debug.Log("Nothing to interact with");
-            return;
         }
         else
         {
             InteractableComponent interactableComponent = currentInteractionObject.GetComponent<InteractableComponent>();
-            interactableComponent.OnInteraction();
+            if(interactableComponent.CanInteract())
+            {
+                interactableComponent.OnInteraction();
+                return true;
+            }
         }
+        return false;
     }
 
     #region damage
@@ -200,6 +211,13 @@ public class PlayerController : MonoBehaviour
 
     public bool CanJump()
     {
+        MovingplatformsManager platformManager = MovingplatformsManager.Instance;
+        if (platformManager != null)
+        {
+            if (platformManager.CarryIronDoll())
+                return false;
+        }
+
         return (playerMovement.IsGrounded || playerMovement.IsCoyoteTimerOn) && !playerMovement.IsJumping && !playerAttack.IsAttacking;
     }
 
