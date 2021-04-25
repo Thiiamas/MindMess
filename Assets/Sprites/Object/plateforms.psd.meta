@@ -1,7 +1,25 @@
 fileFormatVersion: 2
-guid: 5ec24517d865a794f930887e2c4df41d
+guid: 863ddaffe2b130b459131c556d247551
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 5244298900522923163
+    second: plateforms_0
+  - first:
+      213: 6090801318417348800
+    second: plateforms_1
+  - first:
+      213: -2325409468918239075
+    second: plateforms_2
+  - first:
+      213: -6532964562690750295
+    second: plateforms_3
+  - first:
+      213: 1112156482532135927
+    second: plateforms_4
+  - first:
+      213: -2471636306318382003
+    second: plateforms_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -41,7 +59,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -101,7 +119,91 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: plateforms_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 49
+        width: 97
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d907cc7986c7abfd0800000000000000
+      internalID: -2325409468918239075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plateforms_3
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 49
+        width: 33
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a84a96e75f3655a0800000000000000
+      internalID: -6532964562690750295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plateforms_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 9
+        width: 97
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f3d9fbad6c2f6f00800000000000000
+      internalID: 1112156482532135927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plateforms_7
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 9
+        width: 33
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4c2febefdbf2bdd0800000000000000
+      internalID: -2471636306318382003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -114,7 +216,7 @@ TextureImporter:
     secondaryTextures: []
   spritePackingTag: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
+  pSDShowRemoveMatteOption: 1
   userData: 
   assetBundleName: 
   assetBundleVariant: 
