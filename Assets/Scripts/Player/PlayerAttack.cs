@@ -17,8 +17,9 @@ public class PlayerAttack: MonoBehaviour
 
 
     [Header("Attack")]
-    [SerializeField] Collider2D attackCollider;
+    [SerializeField] Transform attackPoint;
     [SerializeField] float attackDamage;
+    [SerializeField] float attackRadius;
 
 
 
@@ -56,24 +57,33 @@ public class PlayerAttack: MonoBehaviour
     void AttackHammer()
 	{
         isAttacking = true;
-        attackCollider.gameObject.SetActive(true);
-        List<Collider2D> hitten = GetCollidersInCollider(attackCollider, enemyLayer);
-
-        foreach (Collider2D hit in hitten)
+        Collider2D[] hitColliders = Physics2D.OverlapCircleAll(attackPoint.position, attackRadius);
+        for (int i = 0; i < hitColliders.Length; i++)
         {
-            Debug.Log(hit.gameObject.name);
+            if (hitColliders[i].gameObject.tag == "Breakable")
+            {
+                Destroy(hitColliders[i].gameObject);
+            }
         }
-        attackCollider.gameObject.SetActive(false);
-    }
 
-
-    List<Collider2D> GetCollidersInCollider(Collider2D collider, LayerMask layer)
-    {
+        /*
         List<Collider2D> hits = new List<Collider2D>();
         ContactFilter2D filter = new ContactFilter2D();
         filter.SetLayerMask(layer);
         Physics2D.OverlapCollider(collider, filter, hits);
-        return hits;
+
+        foreach (Collider2D hit in hits)
+        {
+            Debug.Log(hit.gameObject.name);
+        }
+        attackCollider.gameObject.SetActive(false);
+        */
+    }
+
+    void OnDrawGizmosSelected() 
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(attackPoint.position, attackRadius);
     }
 
 

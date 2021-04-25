@@ -15,13 +15,11 @@ public class PlayerMovement : MonoBehaviour
 	bool isFacingRight = true;
     bool isGrounded = false;
     bool wasGrounded = false;
-    bool isWallSliding = false;
     bool isJumping = false;
-    bool isDashing = false;
 
 
     // Timers
-    Timer dashTimer, coyoteTimer;
+    Timer coyoteTimer;
 
 
     [Header("Speed")]
@@ -37,24 +35,8 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Jump")]
     [SerializeField] float jumpForce = 5f;
-    [SerializeField] float xWallJumpForce = 6f;
     [SerializeField] [Range(0,1)] float jumpFloatFeel = 0.5f;
     [SerializeField] float coyoteTime = .2f;
-
-
-    [Header("Wall")]
-    [SerializeField] Transform wallCheck;
-    [SerializeField] LayerMask whatIsGround;
-    [SerializeField] float wallSlideSpeed;
-    bool isCollidingWithWall = false;
-
-
-    [Header("Dash")]
-    [SerializeField] float dashSpeed;
-    [SerializeField] float dashTime = .2f;
-    [SerializeField] float dashCooldown = 2f;
-    bool dashHasReset = false;
-    bool dashHasCooldown = true;
 
     
     [Header("KnockBack")]
@@ -76,10 +58,6 @@ public class PlayerMovement : MonoBehaviour
     public bool IsGrounded { get { return isGrounded; } }
     public bool IsFacingRight { get { return isFacingRight; } }
     public bool IsJumping { get { return isJumping; } }
-    public bool IsDashing { get { return isDashing; } }
-    public bool DashHasReset { get { return dashHasReset; } }
-    public bool DashHasCooldown { get { return dashHasCooldown; } }
-    public bool IsWallSliding { get { return isWallSliding; } }
     public bool IsCoyoteTimerOn { get { return coyoteTimer.IsOn; } }
     public Vector3 Velocity { get { return velocity; } }
     public Vector2 DirectionInput { get { return directionInput; } }
@@ -95,7 +73,6 @@ public class PlayerMovement : MonoBehaviour
 
         footstepsEmission = footstepsPS.emission;
 
-        dashTimer = new Timer(dashTime);
         coyoteTimer = new Timer(coyoteTime);
     }
 
@@ -113,7 +90,6 @@ public class PlayerMovement : MonoBehaviour
             if ( !wasGrounded ) {
                 //show jump impact
                 Instantiate(jumpImpactPrefab, footstepsPS.transform.position, Quaternion.identity);
-                dashHasReset = true;
             } 
         } 
         else if( wasGrounded && !isJumping ) {
@@ -122,15 +98,8 @@ public class PlayerMovement : MonoBehaviour
 
 
         // Wall Slide
-        isCollidingWithWall = Physics2D.OverlapCircle(wallCheck.position, .2f, whatIsGround);
-        if( isCollidingWithWall && !isGrounded ) {
-            dashHasReset = isDashing ? false : true;
-            isWallSliding = true;
-        } else {
-            isWallSliding = false;
-        }
 
-        if( !isKnockbacked && !isDashing ) 
+        if( !isKnockbacked ) 
         {
             float acceleration = isGrounded ? walkAcceleration : airAcceleration;
             float deceleration = isGrounded ? walkDeceleration : 0;
@@ -143,9 +112,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
 		// if not dashing apply gravity before moving
-        if(!isDashing) {
-            ApplyGravity();
-        }
+        ApplyGravity();
 
         // move
 		characterController.move(velocity * Time.deltaTime);
@@ -172,10 +139,7 @@ public class PlayerMovement : MonoBehaviour
 
     void ApplyGravity()
 	{
-        if(isWallSliding && velocity.y < -wallSlideSpeed) {
-		    velocity.y = -wallSlideSpeed;
-        } 
-        else if( velocity.y < 0) {
+        if( velocity.y < 0) {
 		    velocity.y += Physics2D.gravity.y * fallMultiplier * Time.deltaTime;
         } 
         else {
@@ -201,22 +165,12 @@ public class PlayerMovement : MonoBehaviour
         if (context.performed)
         {
             StartCoroutine( 
-                playerController.InputBuffer(() => playerController.CanJumpTest(), Jump) 
+                playerController.InputBuffer(() => playerController.CanJump(), Jump) 
             );
         }
         else if (context.canceled && velocity.y > 0) {
             velocity.y *= jumpFloatFeel;
             characterController.move( velocity * Time.deltaTime );
-        }
-    }
-
-    public void DashInput(InputAction.CallbackContext context)
-    {
-        if(context.performed) 
-        {
-            StartCoroutine( 
-                playerController.InputBuffer(() => playerController.CanDash(), StartDash) 
-            );
         }
     }
 
@@ -227,11 +181,6 @@ public class PlayerMovement : MonoBehaviour
 
     void Jump()
 	{
-        playerController.CanJumpAfterAttack = false;
-        if(isWallSliding) {
-            velocity.x = isFacingRight ? -xWallJumpForce : xWallJumpForce;
-            Flip();
-        } 
         velocity.y = Mathf.Sqrt( 2 * jumpForce * Mathf.Abs(Physics2D.gravity.y) );
         isJumping = true;
         characterController.move(velocity * Time.deltaTime);
@@ -250,58 +199,8 @@ public class PlayerMovement : MonoBehaviour
     #endregion
 
 
-    #region Dash
-
-    void StartDash()
-    {
-        dashPS.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
-        var main = dashPS.main;
-        main.duration = dashTime;
-        dashPS.Play();
-
-        isDashing = true;
-        dashHasReset = false;
-        Vector2 dSpeed = Vector2.zero;
-        if(directionInput != Vector2.zero){
-            dSpeed = directionInput * dashSpeed;
-        } else {
-            dSpeed.x = isFacingRight ? dashSpeed : -dashSpeed;
-        }
-
-        if (isWallSliding)
-        {
-            dSpeed = -dSpeed;
-            Flip();
-        }
-        StartCoroutine(Dash(dSpeed));
-    }
-
-    public IEnumerator Dash(Vector2 dSpeed)
-    {
-        dashTimer.Start();
-        while (dashTimer.IsOn)
-        {
-            // velocity.y = 0;
-            velocity.y = dSpeed.y;
-            velocity.x = dSpeed.x;
-            dashTimer.Decrease();
-            yield return new WaitForEndOfFrame();
-        }
-        isDashing = false;
-        velocity = Vector3.zero; 
-        dashHasCooldown = false;
-
-        // Cooldown
-        yield return new WaitForSeconds(dashCooldown);
-        dashHasCooldown = true;
-    }
-
-    #endregion
-
-
 
     #region knockBack
-
 
 	public IEnumerator KnockBack(Vector3 direction, Vector2 force)
 	{

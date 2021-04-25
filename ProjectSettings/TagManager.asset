@@ -12,6 +12,7 @@ TagManager:
   - Toupie
   - PlatFantome
   - MovingPlatform
+  - Breakable
   layers:
   - Default
   - TransparentFX

@@ -4806,36 +4806,6 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
---- !u!1 &1194902563830105135
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1194902563830105134}
-  m_Layer: 3
-  m_Name: WallCheckPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1194902563830105134
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1194902563830105135}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.084, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1194902565598434389}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1194902564005957942
 GameObject:
   m_ObjectHideFlags: 0
@@ -4847,7 +4817,7 @@ GameObject:
   - component: {fileID: 1194902564005957941}
   - component: {fileID: 1194902564005957939}
   - component: {fileID: 1194902564005957940}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: Border
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4920,10 +4890,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1194902564121997197}
-  - component: {fileID: 1194902564121997198}
-  - component: {fileID: 6331111978134247563}
-  m_Layer: 0
-  m_Name: AttackCollider
+  m_Layer: 3
+  m_Name: AttackPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4941,45 +4909,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1194902565598434389}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &1194902564121997198
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1194902564121997199}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.3660324
---- !u!50 &6331111978134247563
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1194902564121997199}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &1194902564198417279
 GameObject:
   m_ObjectHideFlags: 0
@@ -4991,7 +4922,7 @@ GameObject:
   - component: {fileID: 1194902564198417278}
   - component: {fileID: 1194902564198417277}
   - component: {fileID: 1194902564198417276}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5114,7 +5045,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1194902565598434389}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1194902564465323591
 SpriteRenderer:
@@ -5212,7 +5143,7 @@ GameObject:
   - component: {fileID: 1194902564469416180}
   - component: {fileID: 1194902564469416178}
   - component: {fileID: 1194902564469416179}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5287,7 +5218,7 @@ GameObject:
   - component: {fileID: 1194902564776762303}
   - component: {fileID: 1194902564776762241}
   - component: {fileID: 1194902564776762240}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: DashEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10170,7 +10101,7 @@ Transform:
   - {fileID: 1194902563806821069}
   - {fileID: 1194902564776762303}
   m_Father: {fileID: 1194902565598434389}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1194902565045896484
 GameObject:
@@ -10183,7 +10114,7 @@ GameObject:
   - component: {fileID: 1194902565045896481}
   - component: {fileID: 1194902565045896482}
   - component: {fileID: 1194902565045896483}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: ManaBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10286,7 +10217,7 @@ GameObject:
   - component: {fileID: 1194902565160473166}
   - component: {fileID: 1194902565160473164}
   - component: {fileID: 1194902565160473165}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: Border
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10361,7 +10292,7 @@ GameObject:
   - component: {fileID: 1194902565165134196}
   - component: {fileID: 1194902565165134194}
   - component: {fileID: 1194902565165134195}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10437,7 +10368,7 @@ GameObject:
   - component: {fileID: 1194902565493650010}
   - component: {fileID: 1194902565493650011}
   - component: {fileID: 1194902565493650012}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: PlayerCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10562,7 +10493,6 @@ Transform:
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 1194902565493650013}
-  - {fileID: 1194902563830105134}
   - {fileID: 1194902564465323590}
   - {fileID: 1194902564121997197}
   - {fileID: 1194902564929826210}
@@ -10692,7 +10622,6 @@ MonoBehaviour:
   healthBar: {fileID: 1194902564198417276}
   manaBar: {fileID: 1194902565045896483}
   maxHealth: 500
-  maxMana: 100
   invincibilityTime: 1.5
   invincibilityDeltaTime: 0.15
   slowMotionFactor: 0.01
@@ -10719,17 +10648,8 @@ MonoBehaviour:
   airAcceleration: 50
   fallMultiplier: 2.5
   jumpForce: 5
-  xWallJumpForce: 5
   jumpFloatFeel: 0.001
   coyoteTime: 0.15
-  wallCheck: {fileID: 1194902563830105134}
-  whatIsGround:
-    serializedVersion: 2
-    m_Bits: 64
-  wallSlideSpeed: 10
-  dashSpeed: 50
-  dashTime: 0.1
-  dashCooldown: 1
   knockBackForce: {x: 5, y: 5}
   knockBackDeceleration: 2
   footstepsPS: {fileID: 1194902563806821067}
@@ -10753,8 +10673,9 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 128
-  attackCollider: {fileID: 1194902564121997198}
-  attackDamage: 0
+  attackPoint: {fileID: 1194902564121997197}
+  attackDamage: 5
+  attackRadius: 0.7
 --- !u!114 &1194902565598434396
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10861,7 +10782,7 @@ GameObject:
   - component: {fileID: 413117883115342398}
   - component: {fileID: 3226034551349962895}
   - component: {fileID: 5962298351929070801}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: Item
   m_TagString: Untagged
   m_Icon: {fileID: 0}

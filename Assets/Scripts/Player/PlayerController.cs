@@ -13,10 +13,8 @@ public class PlayerController : MonoBehaviour
     PlayerMovement playerMovement;
     SpriteRenderer spriteRenderer;
 
-    bool canJump, CanWallJump, collidingWithWall;
-    bool isDead;
+    bool isDead = false;
 
-    [NonSerialized] public bool CanJumpAfterAttack = true;
     
     [Header("Game Object")]
     [SerializeField] public GameObject GFX;
@@ -26,9 +24,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Stats")]
     [SerializeField] float maxHealth = 100;
-    [SerializeField] float maxMana = 100;
     float health = 0f;
-    float mana = 0f;
 
 
     [Header("Invincibility")]
@@ -51,7 +47,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float bufferTime = .2f;
     Timer bufferTimer;
 
-    [Header("Buffer")]
     public GameObject currentInteractionObject;
 
     #region getters
@@ -162,7 +157,6 @@ public class PlayerController : MonoBehaviour
     private IEnumerator BecomeTemporarilyInvincible()
     {
         isInvincible = true;
-        //Physics2D.IgnoreLayerCollision(3,7, true);
         //gameObject.GetComponent<BoxCollider2D>().enabled = false;
 
         for (float i = 0; i < invincibilityTime; i += invincibilityDeltaTime)
@@ -206,28 +200,12 @@ public class PlayerController : MonoBehaviour
 
     public bool CanJump()
     {
-        canJump = (playerMovement.IsGrounded || playerMovement.IsCoyoteTimerOn) && !playerMovement.IsJumping && !playerAttack.IsAttacking && !playerMovement.IsDashing;
-        CanWallJump = playerMovement.IsWallSliding && !playerAttack.IsAttacking && !playerMovement.IsDashing;
-        return  canJump || CanWallJump;
-    }
-
-    //WIP add "aCanJump" attribute to handle jump reset after succefull attack
-    public bool CanJumpTest()
-    {
-        canJump = (playerMovement.IsGrounded || playerMovement.IsCoyoteTimerOn) && !playerMovement.IsJumping && !playerAttack.IsAttacking && !playerMovement.IsDashing;
-        CanWallJump = playerMovement.IsWallSliding && !playerAttack.IsAttacking && !playerMovement.IsDashing;
-        return canJump || CanWallJump || CanJumpAfterAttack;
+        return (playerMovement.IsGrounded || playerMovement.IsCoyoteTimerOn) && !playerMovement.IsJumping && !playerAttack.IsAttacking;
     }
 
     public bool CanAttack()
     {
-        return !playerAttack.IsAttacking && !playerMovement.IsDashing && !playerMovement.IsWallSliding;
-    }
-
-    public bool CanDash()
-    {
-        //return !playerAttack.IsAttacking && 
-        return !playerMovement.IsDashing && playerMovement.DashHasReset && playerMovement.DashHasCooldown;
+        return !playerAttack.IsAttacking;
     }
 
     public RaycastHit2D CheckFantome(LayerMask layerMask)
@@ -238,14 +216,6 @@ public class PlayerController : MonoBehaviour
         return hit;
     }
 
-    /*void OnCollisionEnter2D(Collision2D col)
-    {
-        
-        if (col.gameObject.tag == "Ground")
-        {
-            Debug.Log("gound");
-        }
-    }*/
 
 
     void OnTriggerEnter2D(Collider2D col)
