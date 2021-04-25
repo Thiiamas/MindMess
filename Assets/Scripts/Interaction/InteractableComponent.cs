@@ -12,6 +12,11 @@ public abstract class InteractableComponent : MonoBehaviour
 
     public void DisplayHelper()
     {
+        if(spawnedHelper != null)
+        {
+            Destroy(spawnedHelper);
+            spawnedHelper = null;
+        }
         spawnedHelper = Instantiate(interactionHelper, GetUISpawnPosition(), Quaternion.identity, transform);
     }
 
