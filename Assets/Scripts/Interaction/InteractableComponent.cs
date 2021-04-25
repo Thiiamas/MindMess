@@ -10,13 +10,18 @@ public abstract class InteractableComponent : MonoBehaviour
     private GameObject spawnedHelper;
     public abstract void OnInteraction();
 
+    public virtual bool CanInteract()
+    {
+        return true;
+    }
+
     public void DisplayHelper()
     {
         if(spawnedHelper != null)
         {
             HideUI();
         }
-        spawnedHelper = Instantiate(interactionHelper, GetUISpawnPosition(), Quaternion.identity, transform);
+        spawnedHelper = Instantiate(interactionHelper, GetUISpawnPosition(), Quaternion.identity);
     }
 
     public virtual void HideUI()
