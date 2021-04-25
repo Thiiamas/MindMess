@@ -956,6 +956,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1194902564465323590, guid: b307ec1a07e488544986a2998cb1180d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.628
+      objectReference: {fileID: 0}
+    - target: {fileID: 1194902564465323590, guid: b307ec1a07e488544986a2998cb1180d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.218
+      objectReference: {fileID: 0}
     - target: {fileID: 1194902564469416180, guid: b307ec1a07e488544986a2998cb1180d,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -1135,7 +1145,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 858580972}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.0700011, y: 5.24, z: 11.479472}
+  m_LocalPosition: {x: 2.19, y: 5.4, z: 11.479472}
   m_LocalScale: {x: 2.8960385, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1491350132}
@@ -1723,7 +1733,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prevScene: 6
-  hasItem: 0
   femmeTrigger: 0
   dogDead: 0
 --- !u!4 &1594608441

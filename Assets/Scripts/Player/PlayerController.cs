@@ -147,7 +147,10 @@ public class PlayerController : MonoBehaviour
         spriteRenderer.material = GameManager.Instance.DefaultMaterial;
 
         // shake camera
-        VirtualCameraManager.Instance.ShakeCamera(shakeIntensity, shakeTime);
+        if (VirtualCameraManager.Instance)
+        {
+            VirtualCameraManager.Instance.ShakeCamera(shakeIntensity, shakeTime);
+        }
 
         if (health <= 0) {
             Die();
@@ -244,6 +247,11 @@ public class PlayerController : MonoBehaviour
         {
             currentInteractionObject = col.gameObject;
             currentInteractionObject.GetComponent<InteractableComponent>().DisplayHelper();
+        }
+        if (col.gameObject.tag == "Toupie")
+        {
+            Toupie toupie = col.gameObject.GetComponent<Toupie>();
+            TakeDamage(col.transform, toupie.damage);
         }
         if(col.gameObject.tag == "Enemy" )
         {

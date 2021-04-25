@@ -56,12 +56,14 @@ public class PlayerAttack: MonoBehaviour
     void AttackHammer()
 	{
         isAttacking = true;
+        attackCollider.gameObject.SetActive(true);
         List<Collider2D> hitten = GetCollidersInCollider(attackCollider, enemyLayer);
 
         foreach (Collider2D hit in hitten)
         {
-            /* do something */
+            Debug.Log(hit.gameObject.name);
         }
+        attackCollider.gameObject.SetActive(false);
     }
 
 
