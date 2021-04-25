@@ -697,21 +697,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2560874944648134417, guid: a024395332f0074418190669fae240e3,
         type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2560874944648134417, guid: a024395332f0074418190669fae240e3,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2560874944648134417, guid: a024395332f0074418190669fae240e3,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2560874944648134417, guid: a024395332f0074418190669fae240e3,
-        type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.921
       objectReference: {fileID: 0}
@@ -905,7 +890,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 6.3750386
+  orthographic size: 4.65
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -929,7 +914,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 839288112}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.04, y: 0.34, z: -10}
+  m_LocalPosition: {x: -1, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1080,6 +1065,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Child
+      objectReference: {fileID: 0}
+    - target: {fileID: 8770284384207089222, guid: f92487916c08bc54bbdf3b799e9d2bfd,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8770284384207089222, guid: f92487916c08bc54bbdf3b799e9d2bfd,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f92487916c08bc54bbdf3b799e9d2bfd, type: 3}
@@ -5685,6 +5680,11 @@ PrefabInstance:
       propertyPath: loader
       value: 
       objectReference: {fileID: 1583663663}
+    - target: {fileID: 3904252047274072992, guid: fa48647d45c333b41ba8af5daec01672,
+        type: 3}
+      propertyPath: sceneIndex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3904252047274072993, guid: fa48647d45c333b41ba8af5daec01672,
         type: 3}
       propertyPath: m_Name

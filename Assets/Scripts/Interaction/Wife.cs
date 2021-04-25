@@ -2,14 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Wife : InteractableComponent
+public class Wife : MonoBehaviour
 {
-
-    public override void OnInteraction()
+    public void SetFemmeTrigger()
     {
-        Debug.Log("OU EST LE 20");
         Indestructable.instance.femmeTrigger = true;
     }
-
-
 }

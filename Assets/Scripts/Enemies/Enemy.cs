@@ -97,7 +97,6 @@ public class Enemy : MonoBehaviour
 
     public void DestroySelf()
 	{
-		GameManager.Instance.WaveSpawner.CurrentWave.RemoveEnemy(this);
 		Destroy(gameObject);
 	}
 
@@ -111,7 +110,7 @@ public class Enemy : MonoBehaviour
         health -= damage;
 
         DamagePopup.Create(transform.position + Vector3.one, damage);
-        Instantiate(GameManager.Instance.HurtEffectPrefab, transform.position, Quaternion.identity);
+        Instantiate(Indestructable.instance.HurtEffectPrefab, transform.position, Quaternion.identity);
 
         if (health <= 0) {
             isDead = true;

@@ -17,10 +17,7 @@ public class DamagePopup : MonoBehaviour
 
     public static DamagePopup Create(Vector3 position, float damage)
     {
-        GameObject damagePopupGO =  Instantiate(GameManager.Instance.damagePopupPrefab, position, Quaternion.identity);
-        DamagePopup damagePopup = damagePopupGO.GetComponent<DamagePopup>();
-        damagePopup.Setup(damage);
-        return damagePopup;
+        return null;
     }
 
     // Start is called before the first frame update

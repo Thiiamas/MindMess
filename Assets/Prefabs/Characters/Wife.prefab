@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 2560874944648134417}
   - component: {fileID: 2560874944648134418}
   - component: {fileID: 2560874944648134416}
-  - component: {fileID: 5281367855947255697}
   - component: {fileID: 6125466645773669337}
+  - component: {fileID: 1291856098}
   m_Layer: 10
   m_Name: Wife
   m_TagString: Interactable
@@ -106,21 +106,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5281367855947255697
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2560874944648134419}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43ac378cac54344418c0aecaeb8fcdee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactionHelper: {fileID: 3497861898922562574, guid: 844a254fe643b1642b2396d832509422,
-    type: 3}
-  uiOffset: 2
 --- !u!70 &6125466645773669337
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -137,3 +122,22 @@ CapsuleCollider2D:
   m_Offset: {x: -0.021118, y: 0.009239137}
   m_Size: {x: 0.46676996, y: 0.8442546}
   m_Direction: 0
+--- !u!114 &1291856098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2560874944648134419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e3a1e5a86816e449b446b7a6b0963d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionHelper: {fileID: 3497861898922562574, guid: 844a254fe643b1642b2396d832509422,
+    type: 3}
+  uiOffset: 2
+  dialogueString:
+  - WHERE IS THE WINE ?!
+  textMesh: {fileID: 1333232011886874955, guid: dfb6394e2f9c35d43884642bdbaee3b8,
+    type: 3}

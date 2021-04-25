@@ -77,24 +77,35 @@ public class PlayerController : MonoBehaviour
     {
         if(context.phase == InputActionPhase.Performed)
         {
-            interactWithObject();
+            if(!interactWithObject())
+            {
+                MovingplatformsManager platformManager = MovingplatformsManager.Instance;
+                if (platformManager != null)
+                {
+                    platformManager.DropItem();
+                }
+            }
         }
     }
 
     #endregion Inputs
 
-    void interactWithObject()
+    bool interactWithObject()
     {
         if (currentInteractionObject == null)
         {
             Debug.Log("Nothing to interact with");
-            return;
         }
         else
         {
             InteractableComponent interactableComponent = currentInteractionObject.GetComponent<InteractableComponent>();
-            interactableComponent.OnInteraction();
+            if(interactableComponent.CanInteract())
+            {
+                interactableComponent.OnInteraction();
+                return true;
+            }
         }
+        return false;
     }
 
     #region damage
@@ -118,7 +129,7 @@ public class PlayerController : MonoBehaviour
         healthBar.SetValue(health / maxHealth);
 
         // hurt prefab
-        Instantiate(GameManager.Instance.HurtEffectPrefab, transform.position, Quaternion.identity);
+        Instantiate(Indestructable.instance.HurtEffectPrefab, transform.position, Quaternion.identity);
 
         // knockback
         Vector3 direction = (transform.position - damageDealer.position).normalized;
@@ -129,7 +140,7 @@ public class PlayerController : MonoBehaviour
 
     public IEnumerator DamageCoroutine()
     {
-        spriteRenderer.material = GameManager.Instance.WhiteMaterial;
+        spriteRenderer.material = Indestructable.instance.WhiteMaterial;
         if(health <= 0)
         {
             TimeManager.SlowMotion(slowMotionFactor);
@@ -138,7 +149,7 @@ public class PlayerController : MonoBehaviour
             TimeManager.RestoreTime();
         }
 
-        spriteRenderer.material = GameManager.Instance.DefaultMaterial;
+        spriteRenderer.material = Indestructable.instance.DefaultMaterial;
 
         // shake camera
         if (VirtualCameraManager.Instance)
@@ -199,6 +210,13 @@ public class PlayerController : MonoBehaviour
 
     public bool CanJump()
     {
+        MovingplatformsManager platformManager = MovingplatformsManager.Instance;
+        if (platformManager != null)
+        {
+            if (platformManager.CarryIronDoll())
+                return false;
+        }
+
         return (playerMovement.IsGrounded || playerMovement.IsCoyoteTimerOn) && !playerMovement.IsJumping && !playerAttack.IsAttacking;
     }
 

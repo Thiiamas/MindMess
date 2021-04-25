@@ -8,29 +8,34 @@ public class PressurePlate : MonoBehaviour
 
     bool isPressed = false;
 
-    List<Collider2D> entitiesInCollision = new List<Collider2D>();
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    protected List<Collider2D> entitiesInCollision = new List<Collider2D>();
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public bool HasDollInCollision(){
+        foreach (Collider2D entity in entitiesInCollision)
+        {
+            Doll dollComponent = entity.GetComponent<Doll>();
+            if(dollComponent != null){
+                return true;
+            }
+        }
+        return false;
     }
 
     void OnTriggerEnter2D(Collider2D col)
     {
         if(col.gameObject.tag == "Player" || col.gameObject.tag == "Interactable")
         {
-            entitiesInCollision.Add(col);
-            if (!isPressed)
+            if (col.gameObject.tag == "Player")
             {
-                float colBottomPosition = col.transform.position.y - col.bounds.size.y / 2;
-                float plateUpPosition = transform.position.y + transform.GetComponent<Collider2D>().bounds.size.y / 2;
-                if (Mathf.Abs(colBottomPosition - plateUpPosition) <= 0.1f)
+                MovingplatformsManager.Instance.PlateNextToPlayer = this;
+            }
+
+            float colBottomPosition = col.transform.position.y - col.bounds.size.y / 2;
+            float plateUpPosition = transform.position.y + transform.GetComponent<Collider2D>().bounds.size.y / 2;
+            if (Mathf.Abs(colBottomPosition - plateUpPosition) <= 0.1f)
+            {
+                entitiesInCollision.Add(col);
+                if (!isPressed)
                 {
                     isPressed = true;
                     MovingplatformsManager.Instance.IncreasePressedPlateCount();
@@ -45,6 +50,10 @@ public class PressurePlate : MonoBehaviour
         if(col.gameObject.tag == "Player" || col.gameObject.tag == "Interactable")
         {
             entitiesInCollision.Remove(col);
+            if (col.gameObject.tag == "Player")
+            {
+                MovingplatformsManager.Instance.PlateNextToPlayer = null;
+            }
             if (entitiesInCollision.Count == 0 && isPressed)
             {
                 isPressed = false;
