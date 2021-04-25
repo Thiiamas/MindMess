@@ -10,6 +10,11 @@ public abstract class InteractableComponent : MonoBehaviour
     private GameObject spawnedHelper;
     public abstract void OnInteraction();
 
+    public virtual bool CanInteract()
+    {
+        return true;
+    }
+
     public void DisplayHelper()
     {
         if(spawnedHelper != null)
