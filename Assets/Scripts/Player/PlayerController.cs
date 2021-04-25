@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -67,7 +68,7 @@ public class PlayerController : MonoBehaviour
         playerMovement = this.GetComponent<PlayerMovement>();
         spriteRenderer = GFX.GetComponent<SpriteRenderer>();
 
-
+        health = maxHealth;
         bufferTimer = new Timer(bufferTime);
     }
 
@@ -106,9 +107,11 @@ public class PlayerController : MonoBehaviour
 
     public void Die()
     {
+        isDead = true;
         playerAttack.enabled = false;
         playerMovement.enabled = false;
         this.enabled = false;
+        SceneManager.LoadScene(Indestructable.instance.restartScene);
     }
 
     public void TakeDamage(Transform damageDealer, float damage)
@@ -118,7 +121,7 @@ public class PlayerController : MonoBehaviour
         }
 
         health -= damage;
-        healthBar.SetValue(health);
+        healthBar.SetValue(health / maxHealth);
 
         // hurt prefab
         Instantiate(GameManager.Instance.HurtEffectPrefab, transform.position, Quaternion.identity);
@@ -132,19 +135,22 @@ public class PlayerController : MonoBehaviour
 
     public IEnumerator DamageCoroutine()
     {
-        spriteRenderer.material = GameManager.Instance.WhiteMaterial; 
-        TimeManager.SlowMotion(slowMotionFactor);
+        spriteRenderer.material = GameManager.Instance.WhiteMaterial;
+        if(health <= 0)
+        {
+            TimeManager.SlowMotion(slowMotionFactor);
 
-        yield return new WaitForSecondsRealtime(slowMotionTime);
-        
-        TimeManager.RestoreTime();
+            yield return new WaitForSecondsRealtime(slowMotionTime);
+            TimeManager.RestoreTime();
+        }
+
         spriteRenderer.material = GameManager.Instance.DefaultMaterial;
 
         // shake camera
         VirtualCameraManager.Instance.ShakeCamera(shakeIntensity, shakeTime);
 
         if (health <= 0) {
-            isDead = true;
+            Die();
         } else {
             StartCoroutine(BecomeTemporarilyInvincible());
         }
