@@ -16,7 +16,7 @@ public abstract class InteractableComponent : MonoBehaviour
         {
             HideUI();
         }
-        spawnedHelper = Instantiate(interactionHelper, GetUISpawnPosition(), Quaternion.identity, transform);
+        spawnedHelper = Instantiate(interactionHelper, GetUISpawnPosition(), Quaternion.identity);
     }
 
     public virtual void HideUI()

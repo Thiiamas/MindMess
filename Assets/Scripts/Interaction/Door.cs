@@ -6,14 +6,25 @@ public class Door : InteractableComponent
 {
     [SerializeField] LevelLoader loader;
     [SerializeField] int sceneIndex;
-    public override void OnInteraction()
+    private bool isOpen;
+    private Animator animator;
+
+    void Start()
     {
-        loader.LoadNextLevel(sceneIndex);
+        animator = this.GetComponent<Animator>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void OnInteraction()
     {
-        
+        if(isOpen)
+        {
+            loader.LoadNextLevel(sceneIndex);
+        } 
+        else 
+        {
+            animator.SetBool("isOpen", true);
+            isOpen = true;
+        }
     }
+
 }
