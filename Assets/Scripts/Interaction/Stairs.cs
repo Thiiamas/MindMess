@@ -9,7 +9,8 @@ public class Stairs : InteractableComponent
 
     public override void OnInteraction()
     {
-        if (!Indestructable.instance.femmeTrigger)
+        //si dans 00_1
+        if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex == 0 && !Indestructable.instance.femmeTrigger)
         {
             return;
         }

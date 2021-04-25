@@ -8,7 +8,7 @@ public class PlayerAttack: MonoBehaviour
     CharacterController2D characterController;
     PlayerController playerController;
     PlayerMovement playerMovement;
-    bool isAttacking = false;
+    public bool isAttacking = false;
 
 
     [Header("Stats")]
@@ -48,7 +48,7 @@ public class PlayerAttack: MonoBehaviour
     {
         if(context.performed)
         {
-            StartCoroutine( playerController.InputBuffer(() => playerController.CanAttack(), AttackHammer) );
+            StartCoroutine(playerController.InputBuffer(() => playerController.CanAttack(), AttackHammer));
         }
     }
 
@@ -56,12 +56,14 @@ public class PlayerAttack: MonoBehaviour
     void AttackHammer()
 	{
         isAttacking = true;
+        attackCollider.gameObject.SetActive(true);
         List<Collider2D> hitten = GetCollidersInCollider(attackCollider, enemyLayer);
 
         foreach (Collider2D hit in hitten)
         {
-            /* do something */
+            Debug.Log(hit.gameObject.name);
         }
+        attackCollider.gameObject.SetActive(false);
     }
 
 

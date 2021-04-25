@@ -6,12 +6,13 @@ using Cinemachine;
 public class Vcam1 : MonoBehaviour
 {
     private CinemachineVirtualCamera virtualCamera;
-    [SerializeField] Transform playerTransform;
+    Transform playerTransform;
     [SerializeField] Transform CamTriggerX;
     // Start is called before the first frame update
     void Start()
     {
         virtualCamera = GetComponent<CinemachineVirtualCamera>();
+        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     // Update is called once per frame

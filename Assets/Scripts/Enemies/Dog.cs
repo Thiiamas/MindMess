@@ -22,6 +22,10 @@ public class Dog : MonoBehaviour
     void Die()
     {
         isDead = true;
-        //trappe.sceneIndex = indexAfterDeath;
+        Indestructable.instance.dogDead = true;
+        if (trappe)
+        {
+            trappe.gameObject.SetActive(true);
+        }
     }
 }

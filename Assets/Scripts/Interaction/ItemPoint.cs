@@ -11,8 +11,8 @@ public class ItemPoint : InteractableComponent
         Transform itemHUD = player.transform.Find("PlayerCanvas/Item");
         Image image = itemHUD.GetComponent<Image>();
 
-        bool hasItem = Indestructable.instance.hasItem;
-        Indestructable.instance.hasItem = !hasItem;
+        bool hasItem = GameManager.Instance.HasItem;
+        GameManager.Instance.HasItem = !hasItem;
         image.enabled = !hasItem;
     }
 }
