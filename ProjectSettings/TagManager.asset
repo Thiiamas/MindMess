@@ -11,6 +11,7 @@ TagManager:
   - Interactable
   - Toupie
   - PlatFantome
+  - MovingPlatform
   layers:
   - Default
   - TransparentFX

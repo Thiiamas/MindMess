@@ -252,6 +252,10 @@ public class PlayerController : MonoBehaviour
     {
         if (col.gameObject.tag == "Interactable")
         {
+            if (currentInteractionObject != null)
+            {
+                currentInteractionObject.GetComponent<InteractableComponent>().HideUI();
+            }
             currentInteractionObject = col.gameObject;
             currentInteractionObject.GetComponent<InteractableComponent>().DisplayHelper();
         }

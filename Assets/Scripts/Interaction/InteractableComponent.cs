@@ -14,8 +14,7 @@ public abstract class InteractableComponent : MonoBehaviour
     {
         if(spawnedHelper != null)
         {
-            Destroy(spawnedHelper);
-            spawnedHelper = null;
+            HideUI();
         }
         spawnedHelper = Instantiate(interactionHelper, GetUISpawnPosition(), Quaternion.identity, transform);
     }
