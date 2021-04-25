@@ -14,7 +14,6 @@ public class PlayerController : MonoBehaviour
     SpriteRenderer spriteRenderer;
 
     bool isDead = false;
-
     
     [Header("Game Object")]
     [SerializeField] public GameObject GFX;
@@ -47,7 +46,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float bufferTime = .2f;
     Timer bufferTimer;
 
-    public GameObject currentInteractionObject;
+    private GameObject currentInteractionObject;
 
     #region getters
 

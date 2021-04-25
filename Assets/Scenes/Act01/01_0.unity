@@ -133,8 +133,8 @@ GameObject:
   m_Component:
   - component: {fileID: 48975619}
   - component: {fileID: 48975618}
-  - component: {fileID: 48975617}
   - component: {fileID: 48975620}
+  - component: {fileID: 48975617}
   m_Layer: 10
   m_Name: Wine
   m_TagString: Interactable
@@ -151,14 +151,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 48975616}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 952593985662dad42b6e6bff5c02e6ae, type: 3}
+  m_Script: {fileID: 11500000, guid: 7e3a1e5a86816e449b446b7a6b0963d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   interactionHelper: {fileID: 3497861898922562574, guid: 844a254fe643b1642b2396d832509422,
     type: 3}
   uiOffset: 2
-  loader: {fileID: 176185592}
-  sceneIndex: 2
+  dialogueString:
+  - No wine...
+  textMesh: {fileID: 1333232011886874955, guid: dfb6394e2f9c35d43884642bdbaee3b8,
+    type: 3}
 --- !u!212 &48975618
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -200,7 +202,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -6908575831710699870, guid: 67b75ea21d74c66408c1dc469314458e,
+  m_Sprite: {fileID: 4962202238060913595, guid: 67b75ea21d74c66408c1dc469314458e,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -326,18 +328,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7fe5684375d6736468388a204f679aa8, type: 3}
---- !u!114 &176185592 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2629652823148349408, guid: 7fe5684375d6736468388a204f679aa8,
-    type: 3}
-  m_PrefabInstance: {fileID: 176185591}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48706404a2f821a4d8ad51454314b7c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &291294607
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -393,7 +383,7 @@ PrefabInstance:
     - target: {fileID: 1194902565598434389, guid: b307ec1a07e488544986a2998cb1180d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.654
+      value: 4.16
       objectReference: {fileID: 0}
     - target: {fileID: 1194902565598434389, guid: b307ec1a07e488544986a2998cb1180d,
         type: 3}
@@ -570,7 +560,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 308482150}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.254, y: -1.4708618, z: 0}
+  m_LocalPosition: {x: -4.54, y: -1.4708618, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -913,7 +903,7 @@ PrefabInstance:
     - target: {fileID: 3904252047274072992, guid: fa48647d45c333b41ba8af5daec01672,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3904252047274072993, guid: fa48647d45c333b41ba8af5daec01672,
         type: 3}
@@ -7249,7 +7239,7 @@ MonoBehaviour:
     type: 3}
   uiOffset: 2
   dialogueString:
-  - Her favorite bottle is not here...
+  - Not here either...
   textMesh: {fileID: 1333232011886874955, guid: dfb6394e2f9c35d43884642bdbaee3b8,
     type: 3}
 --- !u!61 &1680662947
@@ -7338,13 +7328,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1680662945}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: -2.546373, y: 1.102, z: 0}
   m_LocalScale: {x: 2.3583443, y: 2.3583443, z: 2.3583443}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &2133537149
 GameObject:
   m_ObjectHideFlags: 0
