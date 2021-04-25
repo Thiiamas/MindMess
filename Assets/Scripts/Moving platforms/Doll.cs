@@ -28,6 +28,6 @@ public class Doll : InteractableComponent
     private void Update()
     {
         velocity.y += Physics2D.gravity.y * Time.deltaTime;
-        //characterController.move(velocity * Time.deltaTime);
+        characterController.move(velocity * Time.deltaTime);
     }
 }
