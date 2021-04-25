@@ -15,7 +15,7 @@ public class Doll : InteractableComponent
         Transform itemHUD = player.transform.Find("PlayerCanvas/Item");
         Image image = itemHUD.GetComponent<Image>();
 
-        GameManager.Instance.Item = gameObject;
+        MovingplatformsManager.Instance.Item = gameObject;
         image.enabled = true;
         Destroy(gameObject);
     }
