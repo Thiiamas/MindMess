@@ -27,7 +27,6 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get { return instance; } }
     public Transform PlayerTransform { get { return playerTransform; } }
     public WaveSpawner WaveSpawner { get { return waveSpawner; } }
-    public GameObject Item { get; set; }
 
     #endregion
 

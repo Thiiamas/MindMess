@@ -10632,10 +10632,10 @@ MonoBehaviour:
   _skinWidth: 0.02
   platformMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 4160
   triggerMask:
     serializedVersion: 2
-    m_Bits: 1408
+    m_Bits: 5504
   oneWayPlatformMask:
     serializedVersion: 2
     m_Bits: 0
@@ -10748,6 +10748,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fd65d993a9d06748a1ebd8ac0c89d58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAttacking: 0
   attackSpeedMultiplier: 1
   enemyLayer:
     serializedVersion: 2

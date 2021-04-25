@@ -10,6 +10,7 @@ public class MovingplatformsManager : MonoBehaviour
 
     private int pressedPlatesCount = 0;
     private GameObject[] movingPlatforms;
+    public GameObject Item { get; set; }
 
     void Awake()
     {
