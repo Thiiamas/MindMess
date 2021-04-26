@@ -1250,7 +1250,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 839288112}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.696992, y: -0.37761998, z: -10}
+  m_LocalPosition: {x: -2.6982148, y: -0.37761998, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -7650,7 +7650,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.777533, y: 1}
+    m_SensorSize: {x: 1.7772021, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -7947,7 +7947,7 @@ MonoBehaviour:
     type: 3}
   uiOffset: 2
   loader: {fileID: 1583663663}
-  sceneIndex: 10
+  sceneIndex: 11
 --- !u!61 &1885256268
 BoxCollider2D:
   m_ObjectHideFlags: 0
