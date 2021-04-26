@@ -31,7 +31,6 @@ public class FantomeGroup : MonoBehaviour
 
         if (current && !hit.transform)
         {
-            Debug.Log(lasts.Count);
             if (lasts.Count >= X)
             {
                 lasts[0].EnableAll();
@@ -40,7 +39,6 @@ public class FantomeGroup : MonoBehaviour
             lasts.Add(current);
             last = current;
             current = null;
-            Debug.Log(lasts.Count);
             last.StartFade(0);
 
         }

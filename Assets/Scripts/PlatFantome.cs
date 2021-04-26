@@ -25,7 +25,10 @@ public class PlatFantome : MonoBehaviour
     {
         platCollider.enabled = true;
         sprite.enabled = true;
-        toupie.SetActive(true);
+        if (toupie)
+        {
+            toupie.SetActive(true);
+        }
     }
     public IEnumerator Fade(float sec)
     {
@@ -33,7 +36,11 @@ public class PlatFantome : MonoBehaviour
 
         platCollider.enabled = false;
         sprite.enabled = false;
-        toupie.SetActive(false);
+        if (toupie)
+        {
+            toupie.SetActive(false);
+        }
+        
         
         StartCoroutine(UnFade());
     }
@@ -49,7 +56,11 @@ public class PlatFantome : MonoBehaviour
         //else unfade;
         platCollider.enabled = true;
         sprite.enabled = true;
-        toupie.SetActive(true);
+        if (toupie)
+        {
+            toupie.SetActive(true);
+        }
+        
     }
 
  
