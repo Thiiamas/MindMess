@@ -25,6 +25,8 @@ public class Door : InteractableComponent
 
         if (isOpen)
         {
+            if (sceneIndex == 13)
+                Indestructable.instance.PlayBossMusic();
             Indestructable.instance.prevScene = UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex;
             loader.LoadNextLevel(sceneIndex);
         } 

@@ -45,6 +45,8 @@ public class WifeK47 : MonoBehaviour
 
     public void OnHit()
     {
+        if (sceneIndex == 16)
+            Indestructable.instance.PlayHappyMusic();
         Indestructable.instance.PlayStrangeSound();
         Indestructable.instance.restartScene = sceneIndex;
         loader.LoadNextLevel(sceneIndex);
