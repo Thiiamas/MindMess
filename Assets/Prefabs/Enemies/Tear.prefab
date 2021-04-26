@@ -222,7 +222,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocity: {x: 0, y: 0, z: 0}
   maxHealth: 999999
-  damage: 100
+  damage: 250
   speed: 4
   currentEndurance: 0
   enduranceRechargeMultiplicator: 0

@@ -10690,7 +10690,6 @@ MonoBehaviour:
   GFX: {fileID: 1194902564465323594}
   healthBar: {fileID: 1194902564198417276}
   manaBar: {fileID: 0}
-  maxHealth: 500
   invincibilityTime: 1.5
   invincibilityDeltaTime: 0.15
   slowMotionFactor: 0.01
@@ -10737,7 +10736,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isAttacking: 0
-  attackSpeedMultiplier: 1
   enemyLayer:
     serializedVersion: 2
     m_Bits: 128
