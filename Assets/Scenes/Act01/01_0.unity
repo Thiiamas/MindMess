@@ -400,7 +400,7 @@ PrefabInstance:
     - target: {fileID: 1194902565598434389, guid: b307ec1a07e488544986a2998cb1180d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.486
+      value: -2.21
       objectReference: {fileID: 0}
     - target: {fileID: 1194902565598434394, guid: b307ec1a07e488544986a2998cb1180d,
         type: 3}
@@ -837,6 +837,7 @@ MonoBehaviour:
   DefaultMaterial: {fileID: 0}
   prevScene: 6
   restartScene: 0
+  hasHammer: 0
   femmeTrigger: 0
   dogDead: 0
 --- !u!4 &812283623
