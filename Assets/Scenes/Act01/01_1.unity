@@ -696,7 +696,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1291856098, guid: a024395332f0074418190669fae240e3, type: 3}
       propertyPath: dialogueString.Array.data[0]
-      value: AND THE THE WINE?!
+      value: AND THE WINE?!
       objectReference: {fileID: 0}
     - target: {fileID: 1291856098, guid: a024395332f0074418190669fae240e3, type: 3}
       propertyPath: dialogueString.Array.data[1]
