@@ -13,6 +13,7 @@ TagManager:
   - PlatFantome
   - MovingPlatform
   - Breakable
+  - Dog
   layers:
   - Default
   - TransparentFX

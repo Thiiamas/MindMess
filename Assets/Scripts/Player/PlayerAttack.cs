@@ -74,6 +74,12 @@ public class PlayerAttack: MonoBehaviour
                 }
                 Destroy(hitColliders[i].gameObject);
             }
+            if (hitColliders[i].gameObject.tag == "Dog")
+            {
+                Dog dog = hitColliders[i].gameObject.GetComponent<Dog>();
+                dog.TakeDamage(1);
+                return;
+            }
         }
 
         /*

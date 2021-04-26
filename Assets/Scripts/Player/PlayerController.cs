@@ -251,7 +251,12 @@ public class PlayerController : MonoBehaviour
             Toupie toupie = col.gameObject.GetComponent<Toupie>();
             TakeDamage(col.transform, toupie.damage);
         }
-        if(col.gameObject.tag == "Enemy" )
+        if (col.gameObject.tag == "Dog")
+        {
+            Dog dog = col.gameObject.GetComponent<Dog>();
+            TakeDamage(col.transform, dog.Damage);
+        }
+        if (col.gameObject.tag == "Enemy" )
         {
             Enemy enemy = col.gameObject.GetComponent<Enemy>();
             TakeDamage(col.transform, enemy.Damage);
