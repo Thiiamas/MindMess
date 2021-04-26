@@ -11,6 +11,7 @@ public class Wine : InteractableComponent
         //show end of act 01
 
         //then loadnext
+        Indestructable.instance.restartScene = sceneIndex;
         loader.LoadNextLevel(sceneIndex);
     }
 
