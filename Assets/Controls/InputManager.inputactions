@@ -228,6 +228,17 @@
                 },
                 {
                     "name": "",
+                    "id": "ebac822b-254e-4cac-8e55-e4403189ddbd",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "7cdaefa7-0cee-4cb0-bc90-f605d7716c88",
                     "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
