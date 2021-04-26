@@ -20,12 +20,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] BarController healthBar;
     [SerializeField] BarController manaBar;
 
-
-    [Header("Stats")]
-    [SerializeField] float maxHealth = 100;
-    float health = 0f;
-
-
     [Header("Invincibility")]
     [SerializeField] float invincibilityTime = 1.5f;
     [SerializeField] float invincibilityDeltaTime = 0.15f;
@@ -62,7 +56,6 @@ public class PlayerController : MonoBehaviour
         playerMovement = this.GetComponent<PlayerMovement>();
         spriteRenderer = GFX.GetComponent<SpriteRenderer>();
 
-        health = maxHealth;
         bufferTimer = new Timer(bufferTime);
     }
 
@@ -112,6 +105,7 @@ public class PlayerController : MonoBehaviour
 
     public void Die()
     {
+        Indestructable.instance.playerHealth = Indestructable.instance.maxHealth;
         isDead = true;
         playerAttack.enabled = false;
         playerMovement.enabled = false;
@@ -119,14 +113,14 @@ public class PlayerController : MonoBehaviour
         SceneManager.LoadScene(Indestructable.instance.restartScene);
     }
 
-    public void TakeDamage(Transform damageDealer, float damage)
+    public void TakeDamage(Transform damageDealer, float damage, bool ignoreInvicible = false)
     {
-        if(isInvincible) { 
+        if(isInvincible && !ignoreInvicible) { 
             return;
         }
 
-        health -= damage;
-        healthBar.SetValue(health / maxHealth);
+        Indestructable.instance.playerHealth -= damage;
+        healthBar.SetValue(Indestructable.instance.playerHealth / Indestructable.instance.maxHealth);
 
         // hurt prefab
         Instantiate(Indestructable.instance.HurtEffectPrefab, transform.position, Quaternion.identity);
@@ -141,7 +135,7 @@ public class PlayerController : MonoBehaviour
     public IEnumerator DamageCoroutine()
     {
         spriteRenderer.material = Indestructable.instance.WhiteMaterial;
-        if(health <= 0)
+        if(Indestructable.instance.playerHealth <= 0)
         {
             TimeManager.SlowMotion(slowMotionFactor);
 
@@ -157,7 +151,7 @@ public class PlayerController : MonoBehaviour
             VirtualCameraManager.Instance.ShakeCamera(shakeIntensity, shakeTime);
         }
 
-        if (health <= 0) {
+        if (Indestructable.instance.playerHealth <= 0) {
             Die();
         } else {
             StartCoroutine(BecomeTemporarilyInvincible());
@@ -261,6 +255,11 @@ public class PlayerController : MonoBehaviour
             Enemy enemy = col.gameObject.GetComponent<Enemy>();
             TakeDamage(col.transform, enemy.Damage);
         } 
+        if(col.gameObject.tag == "Fall")
+        {
+            Enemy enemy = col.gameObject.GetComponent<Enemy>();
+            TakeDamage(col.transform, enemy.Damage, true);
+        }
     }
 
     private void OnTriggerExit2D(Collider2D col)

@@ -18,6 +18,10 @@ public class Indestructable : MonoBehaviour
 
     public bool hasHammer = false;
 
+    [Header("Stats")]
+    [SerializeField] public float maxHealth = 500;
+    public float playerHealth;
+
     //Intro
     public bool femmeTrigger = false;
 
@@ -35,5 +39,6 @@ public class Indestructable : MonoBehaviour
             return;
         }
         DontDestroyOnLoad(this.gameObject);
+        playerHealth = maxHealth;
     }
 }
