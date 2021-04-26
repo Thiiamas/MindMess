@@ -21,6 +21,9 @@ public class PlayerAttack: MonoBehaviour
     [SerializeField] float attackDamage;
     [SerializeField] float attackRadius;
 
+    [SerializeField] AudioSource audioHammer;
+    [SerializeField] AudioSource audioWallBreak;
+
 
 
     #region getters
@@ -56,12 +59,9 @@ public class PlayerAttack: MonoBehaviour
 
     void AttackHammer()
 	{
-        Transform attackPoint = transform.Find("AttackPoint");
-        if(attackPoint != null)
+        if(audioHammer != null)
         {
-            AudioSource audio = attackPoint.GetComponent<AudioSource>();
-            if (audio != null)
-                audio.Play();
+            audioHammer.Play();
         }
         isAttacking = true;
         Collider2D[] hitColliders = Physics2D.OverlapCircleAll(attackPoint.position, attackRadius);
@@ -69,6 +69,10 @@ public class PlayerAttack: MonoBehaviour
         {
             if (hitColliders[i].gameObject.tag == "Breakable")
             {
+                if (audioWallBreak != null)
+                {
+                    audioWallBreak.Play();
+                }
                 Destroy(hitColliders[i].gameObject);
             }
         }

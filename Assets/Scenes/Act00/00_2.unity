@@ -835,6 +835,7 @@ MonoBehaviour:
   DefaultMaterial: {fileID: 0}
   prevScene: 6
   restartScene: 0
+  hasHammer: 0
   femmeTrigger: 0
   dogDead: 0
 --- !u!4 &812283623
@@ -7265,7 +7266,8 @@ MonoBehaviour:
     type: 3}
   uiOffset: 2
   dialogueString:
-  - Her favorite bottle is not here...
+  - Her favorite bottle is
+  - not here...
   textMesh: {fileID: 1333232011886874955, guid: dfb6394e2f9c35d43884642bdbaee3b8,
     type: 3}
 --- !u!61 &1680662947
