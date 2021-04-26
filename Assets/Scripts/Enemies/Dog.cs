@@ -11,6 +11,7 @@ public class Dog : MonoBehaviour
     bool isFacingRight = true;
     Animator animator;
     Rigidbody2D rb;
+    PolygonCollider2D polCollider;
 
     public int health = 3;
     public float Damage = 250f;
@@ -21,13 +22,16 @@ public class Dog : MonoBehaviour
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        polCollider = GetComponent<PolygonCollider2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        FlipTowardPlayer();
+        if (!isDead)
+        {
+            FlipTowardPlayer();
+        }
         animator.SetFloat("VelocityX", Mathf.Abs(rb.velocity.x));
     }
     protected void FlipTowardPlayer()
@@ -47,6 +51,7 @@ public class Dog : MonoBehaviour
     {
         isDead = true;
         animator.SetTrigger("Dead");
+        polCollider.enabled = false;
         Indestructable.instance.dogDead = true;
         if (trappe)
         {
