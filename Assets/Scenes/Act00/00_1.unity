@@ -206,7 +206,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &84350168
 GameObject:
@@ -690,6 +690,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1291856098, guid: a024395332f0074418190669fae240e3, type: 3}
+      propertyPath: dialogueString.Array.data[0]
+      value: WHERE IS THE WINE?!
+      objectReference: {fileID: 0}
     - target: {fileID: 2560874944648134417, guid: a024395332f0074418190669fae240e3,
         type: 3}
       propertyPath: m_RootOrder
@@ -5526,7 +5530,7 @@ Transform:
   - {fileID: 1226505181}
   - {fileID: 84350169}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2071328169
 PrefabInstance:
