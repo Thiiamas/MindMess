@@ -18,17 +18,14 @@ public class Door : InteractableComponent
 
     public override void OnInteraction()
     {
-        if(isOpen)
+        if (dog && !dog.isDead)
         {
-            if (dog && dog.isDead)
-            {
-                //si chien mort, c'est pr forcer la bonne tp
-                Indestructable.instance.prevScene = 200;
-            }
-            else
-            {
-                Indestructable.instance.prevScene = UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex;
-            }
+            return;
+        }
+
+        if (isOpen)
+        {
+            Indestructable.instance.prevScene = UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex;
             loader.LoadNextLevel(sceneIndex);
         } 
         else 
