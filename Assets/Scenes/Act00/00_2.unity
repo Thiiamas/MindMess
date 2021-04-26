@@ -830,6 +830,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0de3d6b8681c4a040a6fe9cfa6bca260, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HurtEffectPrefab: {fileID: 0}
+  WhiteMaterial: {fileID: 0}
+  DefaultMaterial: {fileID: 0}
   prevScene: 6
   restartScene: 0
   femmeTrigger: 0
@@ -922,10 +925,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3904252047274072993, guid: fa48647d45c333b41ba8af5daec01672,
         type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3904252047274072993, guid: fa48647d45c333b41ba8af5daec01672,
+        type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 3904252047274072993, guid: fa48647d45c333b41ba8af5daec01672,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 3904252047274072992, guid: fa48647d45c333b41ba8af5daec01672, type: 3}
+    - {fileID: 3904252047274072991, guid: fa48647d45c333b41ba8af5daec01672, type: 3}
+    - {fileID: 3904252047274072988, guid: fa48647d45c333b41ba8af5daec01672, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: fa48647d45c333b41ba8af5daec01672, type: 3}
 --- !u!1 &1051037813
 GameObject:
@@ -1032,7 +1048,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1051037813}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.83, y: -1.22, z: 0}
+  m_LocalPosition: {x: 0.83, y: -0.52, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
