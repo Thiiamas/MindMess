@@ -200,4 +200,4 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   health: 3
-  Damage: 10
+  Damage: 200
