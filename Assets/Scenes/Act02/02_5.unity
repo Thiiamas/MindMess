@@ -30268,7 +30268,7 @@ PrefabInstance:
     - target: {fileID: 7408351861211827111, guid: 6e430058a43ea9342a76f1c69d0db477,
         type: 3}
       propertyPath: hasHammer
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e430058a43ea9342a76f1c69d0db477, type: 3}
