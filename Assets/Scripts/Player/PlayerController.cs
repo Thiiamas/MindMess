@@ -125,9 +125,9 @@ public class PlayerController : MonoBehaviour
         // hurt prefab
         Instantiate(Indestructable.instance.HurtEffectPrefab, transform.position, Quaternion.identity);
 
-        // knockback
+        /*// knockback
         Vector3 direction = (transform.position - damageDealer.position).normalized;
-        StartCoroutine(playerMovement.KnockBack(direction));
+        StartCoroutine(playerMovement.KnockBack(direction));*/
         
         StartCoroutine(DamageCoroutine());
     }
