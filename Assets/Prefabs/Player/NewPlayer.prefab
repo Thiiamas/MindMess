@@ -10689,7 +10689,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GFX: {fileID: 1194902564465323594}
   healthBar: {fileID: 1194902564198417276}
-  manaBar: {fileID: 0}
   invincibilityTime: 1.5
   invincibilityDeltaTime: 0.15
   slowMotionFactor: 0.01
@@ -10714,7 +10713,7 @@ MonoBehaviour:
   walkDeceleration: 50
   airAcceleration: 10
   fallMultiplier: 2.5
-  jumpForce: 2
+  jumpForce: 2.5
   jumpFloatFeel: 0.001
   coyoteTime: 0.15
   knockBackForce: {x: 5, y: 5}

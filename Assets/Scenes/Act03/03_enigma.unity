@@ -330,12 +330,12 @@ PrefabInstance:
     - target: {fileID: 3504980429013661678, guid: d0216b6118e60294b87e0323cf51a685,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.09
+      value: -8.529
       objectReference: {fileID: 0}
     - target: {fileID: 3504980429013661678, guid: d0216b6118e60294b87e0323cf51a685,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.49
+      value: -2.309
       objectReference: {fileID: 0}
     - target: {fileID: 3504980429013661678, guid: d0216b6118e60294b87e0323cf51a685,
         type: 3}
@@ -25196,9 +25196,12 @@ MonoBehaviour:
   HurtEffectPrefab: {fileID: 0}
   WhiteMaterial: {fileID: 0}
   DefaultMaterial: {fileID: 0}
+  strangeSound: {fileID: 0}
   prevScene: 6
   restartScene: 0
   hasHammer: 0
+  maxHealth: 500
+  playerHealth: 0
   femmeTrigger: 0
   dogDead: 0
 --- !u!4 &1037932125
@@ -26257,7 +26260,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7776026, y: 1}
+    m_SensorSize: {x: 1.7784256, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0

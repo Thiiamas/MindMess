@@ -167,7 +167,7 @@ MonoBehaviour:
   _skinWidth: 0.02
   platformMask:
     serializedVersion: 2
-    m_Bits: 4160
+    m_Bits: 14400
   triggerMask:
     serializedVersion: 2
     m_Bits: 2147483647
