@@ -10727,7 +10727,6 @@ MonoBehaviour:
   shakeTime: 1
   shakeIntensity: 3
   bufferTime: 0.2
-  currentInteractionObject: {fileID: 0}
 --- !u!114 &1194902565598434394
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10740,10 +10739,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3aa24fa31b1d344493e7e8e69a9d24e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8
-  walkAcceleration: 50
+  speed: 5
+  walkAcceleration: 20
   walkDeceleration: 50
-  airAcceleration: 50
+  airAcceleration: 10
   fallMultiplier: 2.5
   jumpForce: 5
   jumpFloatFeel: 0.001
