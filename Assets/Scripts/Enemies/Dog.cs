@@ -1,17 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class Dog : MonoBehaviour
 {
-    public Trappe trappe;
-    public int indexAfterDeath;
+    public Door door;
     public bool isDead = false;
-    public Transform playerTransform;
+    [NonSerialized] public Transform playerTransform;
     bool isFacingRight = true;
     Animator animator;
     Rigidbody2D rb;
-    PolygonCollider2D polCollider;
+    [SerializeField] Collider2D hitboxCollider;
 
     public int health = 3;
     public float Damage = 250f;
@@ -22,7 +22,6 @@ public class Dog : MonoBehaviour
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
-        polCollider = GetComponent<PolygonCollider2D>();
     }
 
     // Update is called once per frame
@@ -51,11 +50,11 @@ public class Dog : MonoBehaviour
     {
         isDead = true;
         animator.SetTrigger("Dead");
-        polCollider.enabled = false;
+        hitboxCollider.enabled = false;
         Indestructable.instance.dogDead = true;
-        if (trappe)
+        if (door)
         {
-            trappe.gameObject.SetActive(true);
+            door.gameObject.SetActive(true);
         }
     }
 
