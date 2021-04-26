@@ -455,7 +455,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f453f694addf4275988fac205bc91968, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_BoundingShape2D: {fileID: 1902082446}
+  m_BoundingShape2D: {fileID: 1223946821}
   m_Damping: 2
   m_MaxWindowSize: -1
 --- !u!114 &527168410
@@ -487,7 +487,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7772021, y: 1}
+    m_SensorSize: {x: 1.7783688, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -32294,10 +32294,10 @@ PolygonCollider2D:
       - {x: -11.811716, y: -5.630627}
       - {x: -11.938542, y: -16.375473}
       - {x: 0.05587244, y: -16.4461}
-      - {x: 1.743597, y: -14.309949}
-      - {x: 3.908802, y: -13.347874}
-      - {x: 3.673769, y: -1.0426741}
-      - {x: 4.13148, y: 0.7633628}
+      - {x: 2.6569462, y: -16.13665}
+      - {x: 19.689453, y: -16.747564}
+      - {x: 19.606646, y: 6.568573}
+      - {x: 9.002677, y: 7.0045853}
 --- !u!4 &1223946822
 Transform:
   m_ObjectHideFlags: 0
@@ -32625,7 +32625,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1688950351}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.551218, y: 14.660919, z: -10}
+  m_LocalPosition: {x: 20.09, y: 14.85, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
