@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6511034427323427127}
   m_Layer: 6
   m_Name: Toupie
-  m_TagString: Untagged
+  m_TagString: Toupie
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -199,7 +199,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 8
-  dashSpeed: 10
+  dashSpeed: 7
   isDashing: 0
   widthPlatform: 0
   dashDirection: 

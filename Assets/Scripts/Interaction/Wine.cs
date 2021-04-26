@@ -12,6 +12,10 @@ public class Wine : InteractableComponent
         //then loadnext
         Indestructable.instance.restartScene = sceneIndex;
         loader.LoadNextLevel(sceneIndex);
+        
+        if(sceneIndex == 2){
+            Indestructable.instance.PlayMadMusic();
+        }
     }
 
     // Update is called once per frame

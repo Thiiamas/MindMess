@@ -487,7 +487,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7785844, y: 1}
+    m_SensorSize: {x: 1.7772021, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -30429,7 +30429,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &843805747
 Transform:
   m_ObjectHideFlags: 0
@@ -32625,7 +32625,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1688950351}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.545103, y: 14.66083, z: -10}
+  m_LocalPosition: {x: 14.551218, y: 14.660919, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -33055,6 +33055,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Hidden Door (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3904252047274072993, guid: fa48647d45c333b41ba8af5daec01672,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa48647d45c333b41ba8af5daec01672, type: 3}

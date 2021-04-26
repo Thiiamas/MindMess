@@ -11,6 +11,10 @@ public class Indestructable : MonoBehaviour
     [SerializeField] public Material DefaultMaterial;
     [SerializeField] private AudioSource strangeSound;
 
+    [SerializeField] private AudioSource happyMusic;
+    [SerializeField] private AudioSource madMusic;
+    [SerializeField] private AudioSource bossMusic;    
+
     public static Indestructable instance = null;
 
     public int prevScene = 6;
@@ -44,11 +48,40 @@ public class Indestructable : MonoBehaviour
         restartScene = 0;
     }
 
+    private void Start()
+    {
+        if (happyMusic)
+            happyMusic.Play();
+    }
+
     public void PlayStrangeSound(){
-        AudioSource audio = strangeSound;
-        if (audio)
+        if (strangeSound)
         {
-            audio.Play();
+            strangeSound.Play();
+        }
+    }
+
+    public void PlayMadMusic(){
+        if (madMusic)
+        {
+            happyMusic.Stop();
+            madMusic.Play();
+        }
+    }
+
+    public void PlayBossMusic(){
+        if (madMusic)
+        {
+            madMusic.Stop();
+            bossMusic.Play();
+        }
+    }
+
+    public void PlayHappyMusic(){
+        if (madMusic)
+        {
+            bossMusic.Stop();
+            happyMusic.Play();
         }
     }
 }

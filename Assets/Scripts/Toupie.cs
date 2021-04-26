@@ -77,4 +77,20 @@ public class Toupie : MonoBehaviour
         }
 
     }
+
+    public void Hurt()
+    {
+        float distanceLeft = Vector2.Distance(transform.position, xGauche.position);
+        float distanceRight = Vector2.Distance(transform.position, xDroite.position);
+
+        if (distanceLeft > distanceRight)
+        {
+            isDashing = true;
+            dashDirection = "left";
+        } else
+        {
+            isDashing = true;
+            dashDirection = "right";
+        }
+    }
 }
