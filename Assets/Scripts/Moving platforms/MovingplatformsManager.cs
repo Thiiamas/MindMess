@@ -84,7 +84,7 @@ public class MovingplatformsManager : MonoBehaviour
 
             float plateSize = PlateNextToPlayer.transform.GetComponent<BoxCollider2D>().size.y * PlateNextToPlayer.transform.localScale.y;
             float itemSize =  Item.transform.GetComponent<BoxCollider2D>().size.y * Item.transform.localScale.y;
-            Vector3 spawnPosition = new Vector3(PlateNextToPlayer.transform.position.x, PlateNextToPlayer.transform.position.y + plateSize / 2+ itemSize / 2, 0);
+            Vector3 spawnPosition = new Vector3(PlateNextToPlayer.transform.position.x, PlateNextToPlayer.transform.position.y + PlateNextToPlayer.transform.GetComponent<Collider2D>().offset.y + plateSize / 2+ itemSize / 2, 0);
 
             Instantiate(Item, spawnPosition, Quaternion.identity);
             Item = null;

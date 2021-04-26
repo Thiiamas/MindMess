@@ -11,7 +11,8 @@ public class Dog : MonoBehaviour
     bool isFacingRight = true;
     Animator animator;
     Rigidbody2D rb;
-    [SerializeField] Collider2D hitboxCollider;
+    [SerializeField]public Collider2D hitboxCollider;
+    public LayerMask groundMask;
 
     public int health = 3;
     public float Damage = 250f;
@@ -30,8 +31,24 @@ public class Dog : MonoBehaviour
         if (!isDead)
         {
             FlipTowardPlayer();
+            animator.SetFloat("VelocityX", Mathf.Abs(rb.velocity.x));
         }
-        animator.SetFloat("VelocityX", Mathf.Abs(rb.velocity.x));
+        animator.SetBool("IsDead", isDead) ;
+
+    }
+
+    public bool CheckGround()
+    {
+        RaycastHit2D hit;
+        Vector2 below = new Vector2(0, -1);
+        hit = Physics2D.Raycast(transform.position, below, 0.9f, groundMask);
+        if (hit.transform)
+        {
+            return true;
+        } else
+        {
+            return false;
+        }
     }
     protected void FlipTowardPlayer()
     {

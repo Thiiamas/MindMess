@@ -2,33 +2,40 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AttackDog : StateMachineBehaviour
+public class RunBackDog : StateMachineBehaviour
 {
     Dog dog;
     Transform playerTransform;
-    Transform dogTransform;
     Rigidbody2D rb;
+    Collider2D boxColl;
+
+    // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        dog = animator.gameObject.GetComponent<Dog>();
+        dog = animator.GetComponent<Dog>();
         playerTransform = dog.playerTransform;
-        dogTransform = dog.transform;
-        rb = animator.gameObject.GetComponent<Rigidbody2D>();
-        Vector2 direction = new Vector2(playerTransform.position.x - dogTransform.position.x, playerTransform.position.y - dogTransform.position.y).normalized;
-        Vector2 force = direction * 75f;
-        force.y += 50f;
-        rb.gravityScale = 0.5f;
-        rb.AddForce(force * 100f * Time.fixedDeltaTime);
-
+        rb = animator.GetComponent<Rigidbody2D>();
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        Debug.Log(dog.CheckGround());
-        if (dog.CheckGround())
+        Vector2 direction;
+        if (playerTransform.position.x - dog.transform.position.x < 0)
         {
-            animator.SetTrigger("Grounded");
+            //joueur a hauche, va a droite
+            direction = new Vector2(1, 0);
+        }
+        else
+        {
+            direction = new Vector2(-1, 0);
+        }
+        if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime < 2f)
+        {
+            rb.velocity = direction * 200f * Time.deltaTime;
+        } else
+        {
+            animator.SetTrigger("EndRunBack");
         }
     }
 

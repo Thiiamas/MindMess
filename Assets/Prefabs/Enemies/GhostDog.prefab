@@ -127,7 +127,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tear: {fileID: 4064911978495940224, guid: 4a3cd664234cb4643b927467d2cd2b12, type: 3}
-  tearFrequency: 0.2
+  tearFrequencyMin: 0.3
+  tearFrequencyMax: 0.7
   pos1: {x: -11.5, y: 3, z: 0}
   pos2: {x: 8.5, y: 3, z: 0}
   translateTime: 5
