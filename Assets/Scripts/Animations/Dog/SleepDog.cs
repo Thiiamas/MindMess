@@ -2,31 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AttackDog : StateMachineBehaviour
+public class SleepDog : StateMachineBehaviour
 {
     Dog dog;
     Transform playerTransform;
-    Transform dogTransform;
     Rigidbody2D rb;
+    // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        dog = animator.gameObject.GetComponent<Dog>();
+        dog = animator.GetComponent<Dog>();
         playerTransform = dog.playerTransform;
-        dogTransform = dog.transform;
-        rb = animator.gameObject.GetComponent<Rigidbody2D>();
-        Vector2 direction = new Vector2(playerTransform.position.x - dogTransform.position.x, playerTransform.position.y - dogTransform.position.y).normalized;
-        Debug.Log("Direction" + direction);
-        Vector2 force = direction * 400f;
-        force.y += 175f;
-        Debug.Log("Force " + force);
-        rb.AddForce(force);
-
+        rb = animator.GetComponent<Rigidbody2D>();
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        
+        float distanceX = Mathf.Abs(playerTransform.position.x - dog.transform.position.x);
+        if (distanceX < 1f)
+        {
+            animator.SetTrigger("WakeUp");
+        }
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
