@@ -20569,7 +20569,7 @@ PrefabInstance:
     - target: {fileID: 5724273821246463296, guid: 76a68f26e669b9b47942fb5c653da483,
         type: 3}
       propertyPath: xPos2
-      value: 11
+      value: 11.5
       objectReference: {fileID: 0}
     - target: {fileID: 5724273821246463296, guid: 76a68f26e669b9b47942fb5c653da483,
         type: 3}
