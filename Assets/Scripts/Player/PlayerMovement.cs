@@ -230,6 +230,20 @@ public class PlayerMovement : MonoBehaviour
         isKnockbacked = false;
 	}
 
+    public IEnumerator KnockBackLittle(Vector3 direction)
+    {
+        isKnockbacked = true;
+        velocity = direction * new Vector2(4,4);
+        characterController.move(velocity * Time.deltaTime);
+        while (velocity.x > .1f || velocity.x < -.1f)
+        {
+            velocity.x = Mathf.MoveTowards(velocity.x, 0, knockBackDeceleration * Time.deltaTime);
+            characterController.move(velocity * Time.deltaTime);
+            yield return new WaitForEndOfFrame();
+        }
+        isKnockbacked = false;
+    }
+
     #endregion
 
 
