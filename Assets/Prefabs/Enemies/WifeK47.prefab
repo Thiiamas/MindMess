@@ -101,7 +101,7 @@ MonoBehaviour:
   loader: {fileID: 0}
   sceneIndex: 0
   baby: {fileID: 3508570314635932560, guid: 98f7a98d7527340439f289a0f4ba274a, type: 3}
-  launchDelay: 1
+  launchDelay: 2
 --- !u!61 &7280373579047594611
 BoxCollider2D:
   m_ObjectHideFlags: 0
