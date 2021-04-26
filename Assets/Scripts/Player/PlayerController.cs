@@ -315,4 +315,9 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void Quit()
+    {
+        Application.Quit();
+    }
+
 }

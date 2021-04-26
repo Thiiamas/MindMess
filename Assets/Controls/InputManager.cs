@@ -49,6 +49,14 @@ public class @InputManager : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Quit"",
+                    ""type"": ""Button"",
+                    ""id"": ""fa17d5a0-eb57-4ee6-b457-112ea794f5d2"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -293,6 +301,17 @@ public class @InputManager : IInputActionCollection, IDisposable
                     ""action"": ""Action"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d669bc26-1ab0-4f48-bf0c-785020a0995d"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Quit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -305,6 +324,7 @@ public class @InputManager : IInputActionCollection, IDisposable
         m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
         m_Player_Attack = m_Player.FindAction("Attack", throwIfNotFound: true);
         m_Player_Action = m_Player.FindAction("Action", throwIfNotFound: true);
+        m_Player_Quit = m_Player.FindAction("Quit", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -358,6 +378,7 @@ public class @InputManager : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_Jump;
     private readonly InputAction m_Player_Attack;
     private readonly InputAction m_Player_Action;
+    private readonly InputAction m_Player_Quit;
     public struct PlayerActions
     {
         private @InputManager m_Wrapper;
@@ -366,6 +387,7 @@ public class @InputManager : IInputActionCollection, IDisposable
         public InputAction @Jump => m_Wrapper.m_Player_Jump;
         public InputAction @Attack => m_Wrapper.m_Player_Attack;
         public InputAction @Action => m_Wrapper.m_Player_Action;
+        public InputAction @Quit => m_Wrapper.m_Player_Quit;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -387,6 +409,9 @@ public class @InputManager : IInputActionCollection, IDisposable
                 @Action.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAction;
                 @Action.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAction;
                 @Action.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAction;
+                @Quit.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnQuit;
+                @Quit.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnQuit;
+                @Quit.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnQuit;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -403,6 +428,9 @@ public class @InputManager : IInputActionCollection, IDisposable
                 @Action.started += instance.OnAction;
                 @Action.performed += instance.OnAction;
                 @Action.canceled += instance.OnAction;
+                @Quit.started += instance.OnQuit;
+                @Quit.performed += instance.OnQuit;
+                @Quit.canceled += instance.OnQuit;
             }
         }
     }
@@ -413,5 +441,6 @@ public class @InputManager : IInputActionCollection, IDisposable
         void OnJump(InputAction.CallbackContext context);
         void OnAttack(InputAction.CallbackContext context);
         void OnAction(InputAction.CallbackContext context);
+        void OnQuit(InputAction.CallbackContext context);
     }
 }
