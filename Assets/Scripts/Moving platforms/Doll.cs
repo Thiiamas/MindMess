@@ -27,7 +27,10 @@ public class Doll : InteractableComponent
 
     private void Update()
     {
-        velocity.y += Physics2D.gravity.y * Time.deltaTime;
+        if(!characterController.isGrounded)
+        {
+            velocity.y += Physics2D.gravity.y * Time.deltaTime;
+        }
         characterController.move(velocity * Time.deltaTime);
 	}
 }
