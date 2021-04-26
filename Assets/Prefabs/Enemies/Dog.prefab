@@ -200,7 +200,7 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 64
-  health: 3
+  health: 6
   Damage: 200
 --- !u!82 &-7793457215693467144
 AudioSource:
