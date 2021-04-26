@@ -87,6 +87,9 @@ public class PlayerAttack: MonoBehaviour
             else if (hitColliders[i].gameObject.tag == "Wife")
             {
                 hitColliders[i].GetComponent<WifeK47>().OnHit();
+            }else if (hitColliders[i].gameObject.tag == "Toupie")
+            {
+                hitColliders[i].GetComponent<Toupie>().Hurt();
             }
         }
 

@@ -6,6 +6,8 @@ public class PlatFantome : MonoBehaviour
 {
     SpriteRenderer sprite;
     BoxCollider2D platCollider;
+    [SerializeField] GameObject toupie;
+
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +25,7 @@ public class PlatFantome : MonoBehaviour
     {
         platCollider.enabled = true;
         sprite.enabled = true;
+        toupie.SetActive(true);
     }
     public IEnumerator Fade(float sec)
     {
@@ -30,12 +33,14 @@ public class PlatFantome : MonoBehaviour
 
         platCollider.enabled = false;
         sprite.enabled = false;
+        toupie.SetActive(false);
+        
         StartCoroutine(UnFade());
     }
 
     public IEnumerator UnFade()
     {
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(3);
         // if already unfaded
         if (platCollider.enabled)
         {
@@ -44,6 +49,7 @@ public class PlatFantome : MonoBehaviour
         //else unfade;
         platCollider.enabled = true;
         sprite.enabled = true;
+        toupie.SetActive(true);
     }
 
  
