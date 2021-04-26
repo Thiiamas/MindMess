@@ -178,14 +178,14 @@ MonoBehaviour:
   m_Follow: {fileID: 1914080863}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 5.6
+    OrthographicSize: 5.75
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7776026, y: 1}
+    m_SensorSize: {x: 1.7785844, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -310,7 +310,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -327,10 +327,10 @@ PolygonCollider2D:
     m_Paths:
     - - {x: -22.992647, y: 4.1219673}
       - {x: -23.057152, y: -4.1798086}
-      - {x: -19.170458, y: -4.2649264}
-      - {x: -19.174377, y: -13.685898}
-      - {x: 6.482468, y: -13.496456}
-      - {x: 6.667916, y: -5.4763002}
+      - {x: -23.129227, y: -7.806984}
+      - {x: -23.289415, y: -13.477542}
+      - {x: 8.878566, y: -13.548545}
+      - {x: 8.595212, y: -5.9971905}
       - {x: 8.575473, y: -4.7037463}
       - {x: 8.839346, y: 4.104373}
 --- !u!4 &90801224
@@ -341,7 +341,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 90801222}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.227452, y: 0.43309557, z: -28.074486}
+  m_LocalPosition: {x: 6.227452, y: 0.43309557, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -21050,7 +21050,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5.6
+  orthographic size: 5.75
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -21074,7 +21074,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2072994431}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.9339066, y: -1.3672999, z: -10}
+  m_LocalPosition: {x: 4.6498156, y: -1.76006, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
