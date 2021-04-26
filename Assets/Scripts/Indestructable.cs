@@ -9,6 +9,7 @@ public class Indestructable : MonoBehaviour
     [Header("Materials")]
     [SerializeField] public Material WhiteMaterial;
     [SerializeField] public Material DefaultMaterial;
+    [SerializeField] private AudioSource strangeSound;
 
     public static Indestructable instance = null;
 
@@ -40,5 +41,13 @@ public class Indestructable : MonoBehaviour
         }
         DontDestroyOnLoad(this.gameObject);
         playerHealth = maxHealth;
+    }
+
+    public void PlayStrangeSound(){
+        AudioSource audio = strangeSound;
+        if (audio)
+        {
+            audio.Play();
+        }
     }
 }
