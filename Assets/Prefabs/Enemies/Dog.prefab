@@ -9,12 +9,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 458184371808854780}
-  - component: {fileID: 458184371808854781}
   - component: {fileID: 458184371808854782}
   - component: {fileID: 458184371808854783}
   - component: {fileID: 458184371808854752}
   - component: {fileID: 458184371808854753}
-  - component: {fileID: 458184371808854754}
+  - component: {fileID: 6185832441183577609}
+  - component: {fileID: 458184371808854781}
   m_Layer: 7
   m_Name: Dog
   m_TagString: Dog
@@ -36,24 +36,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &458184371808854781
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 458184371808854755}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13953e9477ca8df4ca7ab438fda7cf70, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  trappe: {fileID: 0}
-  indexAfterDeath: 10
-  isDead: 0
-  playerTransform: {fileID: 0}
-  health: 3
-  Damage: 10
 --- !u!212 &458184371808854782
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -160,7 +142,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0037904233, y: -0.041178614}
+  m_Offset: {x: -0.0008417666, y: -0.047215834}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -171,10 +153,10 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.58306634, y: 0.39355052}
+  m_Size: {x: 0.6272946, y: 0.40562496}
   m_EdgeRadius: 0
---- !u!60 &458184371808854754
-PolygonCollider2D:
+--- !u!61 &6185832441183577609
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -186,7 +168,7 @@ PolygonCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.0008417666, y: -0.047215834}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -196,16 +178,23 @@ PolygonCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.15624966, y: 0.13886574}
-      - {x: -0.2757347, y: 0.12797236}
-      - {x: -0.28859958, y: -0.005193105}
-      - {x: -0.22889416, y: -0.0831952}
-      - {x: -0.23896979, y: -0.2398779}
-      - {x: -0.13521004, y: -0.2351682}
-      - {x: 0.060568076, y: -0.22479607}
-      - {x: 0.16752878, y: -0.22211291}
-      - {x: 0.1691172, y: -0.12005171}
-      - {x: 0.23529333, y: -0.039283417}
-      - {x: 0.29044074, y: 0.05821023}
+  serializedVersion: 2
+  m_Size: {x: 0.6272946, y: 0.40562496}
+  m_EdgeRadius: 0
+--- !u!114 &458184371808854781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458184371808854755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13953e9477ca8df4ca7ab438fda7cf70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  door: {fileID: 0}
+  isDead: 0
+  hitboxCollider: {fileID: 6185832441183577609}
+  health: 3
+  Damage: 10
