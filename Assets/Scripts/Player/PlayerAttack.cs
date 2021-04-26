@@ -12,6 +12,7 @@ public class PlayerAttack: MonoBehaviour
 
 
     [Header("Stats")]
+    [SerializeField] float attackSpeedMultiplier = 1f;
     [SerializeField] LayerMask enemyLayer;
 
 

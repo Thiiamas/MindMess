@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour
 
     private static GameManager instance;
     private Transform playerTransform;
+    private WaveSpawner waveSpawner;
+
 
     [Header("Text Pop Up")]
     [SerializeField] public GameObject damagePopupPrefab;
@@ -24,6 +26,7 @@ public class GameManager : MonoBehaviour
 
     public static GameManager Instance { get { return instance; } }
     public Transform PlayerTransform { get { return playerTransform; } }
+    public WaveSpawner WaveSpawner { get { return waveSpawner; } }
 
     #endregion
 
