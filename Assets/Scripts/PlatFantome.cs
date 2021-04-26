@@ -4,17 +4,14 @@ using UnityEngine;
 
 public class PlatFantome : MonoBehaviour
 {
-
-
     SpriteRenderer sprite;
-    BoxCollider2D collider;
+    BoxCollider2D platCollider;
 
-    bool playerStanding = false;
     // Start is called before the first frame update
     void Start()
     {
         sprite = GetComponent<SpriteRenderer>();
-        collider = GetComponent<BoxCollider2D>();
+        platCollider = GetComponent<BoxCollider2D>();
     }
 
     public void StartFade(float sec)
@@ -24,14 +21,14 @@ public class PlatFantome : MonoBehaviour
 
     public void EnableAll()
     {
-        collider.enabled = true;
+        platCollider.enabled = true;
         sprite.enabled = true;
     }
     public IEnumerator Fade(float sec)
     {
         yield return new WaitForSeconds(sec);
 
-        collider.enabled = false;
+        platCollider.enabled = false;
         sprite.enabled = false;
         StartCoroutine(UnFade());
     }
@@ -40,12 +37,12 @@ public class PlatFantome : MonoBehaviour
     {
         yield return new WaitForSeconds(10);
         // if already unfaded
-        if (collider.enabled)
+        if (platCollider.enabled)
         {
             yield break;
         }
         //else unfade;
-        collider.enabled = true;
+        platCollider.enabled = true;
         sprite.enabled = true;
     }
 

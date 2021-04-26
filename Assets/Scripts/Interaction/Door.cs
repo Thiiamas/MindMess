@@ -6,6 +6,8 @@ public class Door : InteractableComponent
 {
     [SerializeField] LevelLoader loader;
     [SerializeField] int sceneIndex;
+    [SerializeField] Dog dog;
+
     private bool isOpen;
     private Animator animator;
 
@@ -18,6 +20,15 @@ public class Door : InteractableComponent
     {
         if(isOpen)
         {
+            if (dog && dog.isDead)
+            {
+                //si chien mort, c'est pr forcer la bonne tp
+                Indestructable.instance.prevScene = 200;
+            }
+            else
+            {
+                Indestructable.instance.prevScene = UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex;
+            }
             loader.LoadNextLevel(sceneIndex);
         } 
         else 
@@ -30,5 +41,4 @@ public class Door : InteractableComponent
             }
         }
     }
-
 }

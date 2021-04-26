@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Desk : InteractableComponent
 {
-    bool isOpen = false;
     public override void OnInteraction()
     {
         Debug.Log("This is a desk wow");
