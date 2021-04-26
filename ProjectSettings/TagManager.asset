@@ -15,6 +15,8 @@ TagManager:
   - Breakable
   - Dog
   - Fall
+  - Baby
+  - Wife
   layers:
   - Default
   - TransparentFX

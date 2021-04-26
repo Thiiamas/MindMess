@@ -80,6 +80,10 @@ public class PlayerAttack: MonoBehaviour
                 dog.TakeDamage(1);
                 return;
             }
+            if (hitColliders[i].gameObject.tag == "Baby")
+            {
+                Destroy(hitColliders[i].gameObject);
+            }
         }
 
         /*

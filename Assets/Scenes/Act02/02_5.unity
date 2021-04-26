@@ -195,6 +195,11 @@ PrefabInstance:
       propertyPath: door
       value: 
       objectReference: {fileID: 311200953}
+    - target: {fileID: 458184371808854781, guid: c24d31593a8590443ad1e8570ae87fdf,
+        type: 3}
+      propertyPath: groundMask.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c24d31593a8590443ad1e8570ae87fdf, type: 3}
 --- !u!114 &311200953 stripped
@@ -271,7 +276,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7784256, y: 1}
+    m_SensorSize: {x: 1.7776026, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -288,7 +293,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 527168408}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20.128, y: 14.666, z: -10}
+  m_LocalPosition: {x: 27.16, y: -1.8, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1158843081}
@@ -29906,6 +29911,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7408351861211827111, guid: 6e430058a43ea9342a76f1c69d0db477,
+        type: 3}
+      propertyPath: hasHammer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e430058a43ea9342a76f1c69d0db477, type: 3}
 --- !u!1001 &809473074
@@ -29958,12 +29968,12 @@ PrefabInstance:
     - target: {fileID: 1194902565598434389, guid: b307ec1a07e488544986a2998cb1180d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 20.128
+      value: 27.16
       objectReference: {fileID: 0}
     - target: {fileID: 1194902565598434389, guid: b307ec1a07e488544986a2998cb1180d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 14.666
+      value: -1.8
       objectReference: {fileID: 0}
     - target: {fileID: 8974720009917570117, guid: b307ec1a07e488544986a2998cb1180d,
         type: 3}
@@ -32261,7 +32271,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1688950351}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20.128, y: 14.666, z: -10}
+  m_LocalPosition: {x: 27.16, y: -1.8, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

@@ -131,6 +131,22 @@ public class PlayerController : MonoBehaviour
         StartCoroutine(DamageCoroutine());
     }
 
+    public void TakeDamageWithoutKB(Transform damageDealer, float damage, bool ignoreInvicible = false)
+    {
+        if (isInvincible && !ignoreInvicible)
+        {
+            return;
+        }
+
+        Indestructable.instance.playerHealth -= damage;
+        healthBar.SetValue(Indestructable.instance.playerHealth / Indestructable.instance.maxHealth);
+
+        // hurt prefab
+        Instantiate(Indestructable.instance.HurtEffectPrefab, transform.position, Quaternion.identity);
+
+        StartCoroutine(DamageCoroutine());
+    }
+
     public IEnumerator DamageCoroutine()
     {
         spriteRenderer.material = Indestructable.instance.WhiteMaterial;
@@ -258,6 +274,11 @@ public class PlayerController : MonoBehaviour
         {
             Enemy enemy = col.gameObject.GetComponent<Enemy>();
             TakeDamage(col.transform, enemy.Damage, true);
+        }
+        if(col.gameObject.tag == "Baby")
+        {
+            Baby baby = col.gameObject.GetComponent<Baby>();
+            TakeDamageWithoutKB(col.transform, baby.Damage);
         }
     }
 
