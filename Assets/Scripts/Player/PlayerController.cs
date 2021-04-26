@@ -18,7 +18,6 @@ public class PlayerController : MonoBehaviour
     [Header("Game Object")]
     [SerializeField] public GameObject GFX;
     [SerializeField] BarController healthBar;
-    [SerializeField] BarController manaBar;
 
     [Header("Invincibility")]
     [SerializeField] float invincibilityTime = 1.5f;

@@ -7,13 +7,17 @@ public class GhostDog : MonoBehaviour
     [SerializeField] private GameObject tear;
     [SerializeField] private float tearFrequencyMin;
     [SerializeField] private float tearFrequencyMax;
-    [SerializeField] private Vector3 pos1;
-    [SerializeField] private Vector3 pos2;
+    private Vector3 pos1;
+    private Vector3 pos2;
+    [SerializeField] private float xPos2;
     [SerializeField] private float translateTime;
 
     // Start is called before the first frame update
     void Start()
     {
+        pos1 = this.transform.position;
+        pos2 = this.transform.position;
+        pos2.x = xPos2;
         StartCoroutine(MoveDog());
         StartCoroutine(Cry());
     }
