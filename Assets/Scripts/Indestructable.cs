@@ -70,15 +70,21 @@ public class Indestructable : MonoBehaviour
     }
 
     public void PlayBossMusic(){
-        if (madMusic)
+        if (bossMusic)
         {
             madMusic.Stop();
             bossMusic.Play();
         }
     }
 
+    public void StopMusic(){
+        madMusic.Stop();
+        bossMusic.Stop();
+        happyMusic.Stop();
+    }
+
     public void PlayHappyMusic(){
-        if (madMusic)
+        if (happyMusic)
         {
             bossMusic.Stop();
             happyMusic.Play();
