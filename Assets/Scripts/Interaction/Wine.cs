@@ -8,8 +8,7 @@ public class Wine : InteractableComponent
     [SerializeField] int sceneIndex;
     public override void OnInteraction()
     {
-        //show end of act 01
-
+        Indestructable.instance.PlayStrangeSound();
         //then loadnext
         Indestructable.instance.restartScene = sceneIndex;
         loader.LoadNextLevel(sceneIndex);
