@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: dc4229333345c154f9c1a7c2e088b756
+guid: a11fa08486629ed41a3cbb06957bfac1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3294102424126661237
-    second: wife_idle_0
+      213: 693911791120124209
+    second: wife_idle 1_0
+  - first:
+      213: -8524226289429039837
+    second: wife_idle 1_1
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -106,11 +109,11 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: wife_idle_0
+      name: wife_idle 1_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 96
+        y: 128
         width: 32
         height: 32
       alignment: 0
@@ -120,8 +123,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 572a2dba3b007bd20800000000000000
-      internalID: 3294102424126661237
+      spriteID: 1398b27f81541a900800000000000000
+      internalID: 693911791120124209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wife_idle 1_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32539816a5dd3b980800000000000000
+      internalID: -8524226289429039837
       vertices: []
       indices: 
       edges: []
