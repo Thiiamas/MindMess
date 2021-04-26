@@ -113,9 +113,9 @@ public class PlayerController : MonoBehaviour
         SceneManager.LoadScene(Indestructable.instance.restartScene);
     }
 
-    public void TakeDamage(Transform damageDealer, float damage)
+    public void TakeDamage(Transform damageDealer, float damage, bool ignoreInvicible = false)
     {
-        if(isInvincible) { 
+        if(isInvincible && !ignoreInvicible) { 
             return;
         }
 
@@ -255,6 +255,11 @@ public class PlayerController : MonoBehaviour
             Enemy enemy = col.gameObject.GetComponent<Enemy>();
             TakeDamage(col.transform, enemy.Damage);
         } 
+        if(col.gameObject.tag == "Fall")
+        {
+            Enemy enemy = col.gameObject.GetComponent<Enemy>();
+            TakeDamage(col.transform, enemy.Damage, true);
+        }
     }
 
     private void OnTriggerExit2D(Collider2D col)

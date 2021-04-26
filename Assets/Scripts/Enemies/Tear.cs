@@ -20,7 +20,7 @@ public class Tear : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.transform.gameObject.layer == 6 || collision.transform.tag == "Enemy"){
+        if(collision.transform.gameObject.layer == 6 || collision.transform.tag == "Fall"){
             Destroy(gameObject);
         }
     }
