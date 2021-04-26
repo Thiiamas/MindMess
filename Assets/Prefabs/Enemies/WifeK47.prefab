@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4857285852601384556}
   - component: {fileID: 4857285852601384557}
   - component: {fileID: 4857285852601384558}
+  - component: {fileID: 7280373579047594611}
   m_Layer: 7
   m_Name: WifeK47
   m_TagString: Wife
@@ -97,5 +98,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93f5b922764efc94d84f5da9c23aeb6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loader: {fileID: 0}
+  sceneIndex: 0
   baby: {fileID: 3508570314635932560, guid: 98f7a98d7527340439f289a0f4ba274a, type: 3}
   launchDelay: 1
+--- !u!61 &7280373579047594611
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4857285852601384559}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 2}
+    newSize: {x: 1, y: 2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2}
+  m_EdgeRadius: 0

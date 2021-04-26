@@ -74,15 +74,19 @@ public class PlayerAttack: MonoBehaviour
                 }
                 Destroy(hitColliders[i].gameObject);
             }
-            if (hitColliders[i].gameObject.tag == "Dog")
+            else if (hitColliders[i].gameObject.tag == "Dog")
             {
                 Dog dog = hitColliders[i].gameObject.GetComponent<Dog>();
                 dog.TakeDamage(1);
                 return;
             }
-            if (hitColliders[i].gameObject.tag == "Baby")
+            else if (hitColliders[i].gameObject.tag == "Baby")
             {
                 Destroy(hitColliders[i].gameObject);
+            }
+            else if (hitColliders[i].gameObject.tag == "Wife")
+            {
+                hitColliders[i].GetComponent<WifeK47>().OnHit();
             }
         }
 

@@ -15,7 +15,7 @@ public class Indestructable : MonoBehaviour
 
     public int prevScene = 6;
 
-    public int restartScene = 0;
+    public int restartScene;
 
     public bool hasHammer = false;
 
@@ -41,6 +41,7 @@ public class Indestructable : MonoBehaviour
         }
         DontDestroyOnLoad(this.gameObject);
         playerHealth = maxHealth;
+        restartScene = 0;
     }
 
     public void PlayStrangeSound(){

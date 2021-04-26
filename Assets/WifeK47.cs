@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class WifeK47 : MonoBehaviour
 {
+    [SerializeField] LevelLoader loader;
+    [SerializeField] int sceneIndex;
+
     Transform playerTransform;
     public GameObject baby;
 
@@ -33,7 +36,14 @@ public class WifeK47 : MonoBehaviour
         Vector2 direction = (playerTransform.position - transform.position);
         direction.x += Rand.NextGaussianDouble();
         direction.y += Rand.NextGaussianDouble();
-       direction = direction.normalized;
+        direction = direction.normalized;
         rb.velocity = direction * 4000 * Time.deltaTime;
-        }
     }
+
+    public void OnHit()
+    {
+        Indestructable.instance.PlayStrangeSound();
+        Indestructable.instance.restartScene = sceneIndex;
+        loader.LoadNextLevel(sceneIndex);
+    }
+}

@@ -20,6 +20,11 @@ public class AttackDog : StateMachineBehaviour
         rb.gravityScale = 0.5f;
         rb.AddForce(force * 100f * Time.fixedDeltaTime);
 
+        AudioSource audio = animator.gameObject.GetComponent<AudioSource>();
+        if(audio){
+            audio.Play();
+        }
+
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

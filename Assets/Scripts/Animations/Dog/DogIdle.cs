@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DogIdle : StateMachineBehaviour
 {
-    float delay = 2.0f;
+    //float delay = 2.0f;
     Dog dog;
     Transform playerTransform;
     Rigidbody2D rb;
