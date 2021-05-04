@@ -132,6 +132,9 @@ MonoBehaviour:
   loader: {fileID: 0}
   sceneIndex: 16
   SpawnPoint: {fileID: 3481477351397613492}
+  spread: 20
+  bSpeed: 15
+  DebugDirection: {x: 0, y: 0}
   baby: {fileID: 6311630794445629047, guid: 98f7a98d7527340439f289a0f4ba274a, type: 3}
   launchDelay: 2
 --- !u!61 &3481477352737049874
