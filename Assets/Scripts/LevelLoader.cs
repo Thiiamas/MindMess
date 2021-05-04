@@ -17,6 +17,7 @@ public class LevelLoader : MonoBehaviour
 
         yield return new WaitForSeconds(1);
 
+        Indestructable.instance.restartScene = sceneIndex;
         SceneManager.LoadScene(sceneIndex);
     }
 
