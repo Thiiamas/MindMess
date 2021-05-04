@@ -7,7 +7,9 @@ public class WifeK47 : MonoBehaviour
     [SerializeField] LevelLoader loader;
     [SerializeField] int sceneIndex;
     [SerializeField] Transform SpawnPoint;
-
+    public float spread=20;
+    public float bSpeed = 15;
+    Vector2 DebugDirection;
     Transform playerTransform;
     public GameObject baby;
     Animator animator;
@@ -36,11 +38,13 @@ public class WifeK47 : MonoBehaviour
         GameObject instanciated = Instantiate(baby, SpawnPoint.position, Quaternion.identity);
         Rigidbody2D rb = instanciated.GetComponent<Rigidbody2D>();
 
-        Vector2 direction = (playerTransform.position - transform.position);
-        direction.x += Rand.NextGaussianDouble()/6;
-        direction.y += Rand.NextGaussianDouble();
-        direction = direction.normalized;
-        rb.velocity = direction * 4000 * Time.deltaTime;
+        Vector2 direction = (playerTransform.position - SpawnPoint.position).normalized;
+        direction += (Random.insideUnitCircle / spread);
+        DebugDirection = direction;
+        /*direction.x += Rand.NextGaussianDouble()/6;
+        direction.y += Rand.NextGaussianDouble()/3;
+        direction = direction.normalized;*/
+        rb.velocity = direction * bSpeed;
     }
 
     public void OnHit()
