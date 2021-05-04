@@ -10714,7 +10714,7 @@ MonoBehaviour:
   airAcceleration: 10
   fallMultiplier: 2.5
   jumpForce: 2.5
-  jumpFloatFeel: 0.001
+  jumpFloatFeel: 0.5
   coyoteTime: 0.15
   knockBackForce: {x: 5, y: 5}
   knockBackDeceleration: 2
@@ -10833,22 +10833,6 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 235754b3-786b-482c-91c0-b5b2fa9e9815
     m_ActionName: Player/Action[/Keyboard/q]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1194902565598434393}
-        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: Quit
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: fa17d5a0-eb57-4ee6-b457-112ea794f5d2
-    m_ActionName: Player/Quit[/Keyboard/escape]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
